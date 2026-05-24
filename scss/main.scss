@@ -2,5 +2,16 @@
 @import './vars';
 @import './general';
 
-
+// @include font-face('Manrope', 'Manrope-Thin', 100);
+// @include font-face('Manrope', 'Manrope-ExtraLight', 200);
+// @include font-face('Manrope', 'Manrope-Light', 300);
 @include font-face('Manrope', 'Manrope-Regular', 400);
+@include font-face('Manrope', 'Manrope-Medium', 500);
+@include font-face('Manrope', 'Manrope-SemiBold', 600);
+@include font-face('Manrope', 'Manrope-Bold', 700);
+// @include font-face('Manrope', 'Manrope-ExtraBold', 800);
+
+@include font-face('Gilroy', 'Gilroy-Bold', 600);
+@include font-face('Gilroy', 'Gilroy-SemiBold', 700);
+@include font-face('Gilroy', 'Gilroy-Medium', 500);
+
