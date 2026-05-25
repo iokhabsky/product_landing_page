@@ -33,11 +33,41 @@ body {
   font-size: 1.6rem;
   line-height: 2.4rem;
   color: #333333;
+  background-color: #ffffff;
 }
 
 .container {
+  position: relative;
   max-width: 120rem;
   margin: 0 auto;
+  z-index: 200;
+}
+
+.logo {
+  color: #111;
+  font-size: 20px;
+  font-family: "Gilroy";
+  font-weight: 600;
+}
+
+.menu a {
+  display: inline-block;
+  padding: 40px 0;
+  font-size: 14px;
+  color: #333333;
+  font-weight: 700;
+}
+.menu a:not(:last-of-type) {
+  margin-right: 38px;
+}
+.menu a.has-dropdown {
+  position: relative;
+  margin-right: 25px;
+}
+.menu a.has-dropdown .icon {
+  width: 10px;
+  height: 10px;
+  margin-left: 10px;
 }
 
 @font-face {
@@ -69,6 +99,13 @@ body {
   font-display: swap;
 }
 @font-face {
+  font-family: "Manrope";
+  src: url("../fonts/Manrope-ExtraBold.woff2") format("woff2"), url("../fonts/Manrope-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
   font-family: "Gilroy";
   src: url("../fonts/Gilroy-Bold.woff2") format("woff2"), url("../fonts/Gilroy-Bold.woff") format("woff");
   font-weight: 600;
@@ -88,4 +125,176 @@ body {
   font-weight: 500;
   font-style: normal;
   font-display: swap;
+}
+header {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 42px;
+  margin-bottom: 60px;
+  border-bottom: 1px solid rgba(196, 196, 196, 0.4);
+  z-index: 100;
+}
+
+header .logo {
+  margin-right: auto;
+}
+
+.header-wave {
+  position: absolute;
+  left: -141px;
+  top: -68px;
+  width: 1040px;
+  height: 888px;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header-nav .menu {
+  margin-right: 180px;
+}
+
+.header-login {
+  display: flex;
+  align-items: center;
+}
+.header-login .h-btn {
+  display: inline-block;
+  padding: 16px 35px;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.header-login .h-btn.base {
+  background-color: #5D5FEF;
+  color: #fff;
+}
+.header-login .h-btn.base:hover {
+  opacity: 0.7;
+}
+.header-login .h-btn.base:active {
+  opacity: 1;
+}
+.header-login .h-btn.transparent {
+  color: #333333;
+}
+.header-login .h-btn.transparent:hover {
+  opacity: 0.7;
+}
+.header-login .h-btn.transparent:active {
+  opacity: 1;
+  color: #5D5FEF;
+}
+
+.header-content {
+  margin-top: 122px;
+}
+
+.header-subtitle {
+  font-family: "Gilroy";
+  font-weight: 700;
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.header-title {
+  max-width: 646px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+  font-size: 6rem;
+  line-height: 1.33;
+  font-weight: 800;
+}
+
+.header-text {
+  max-width: 569px;
+  margin-bottom: 20px;
+  color: #757095;
+  font-size: 2rem;
+  line-height: 1.75;
+}
+
+.header-form {
+  position: relative;
+  max-width: 622px;
+  background-color: #fff;
+  box-shadow: 0 4.35px 134px rgba(0, 0, 0, 0.1);
+}
+.header-form label {
+  position: absolute;
+  left: 24px;
+  top: 27px;
+  font-family: "Gilroy";
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: rgba(0, 0, 0, 0.4);
+}
+.header-form input {
+  width: 100%;
+  height: 100px;
+  padding: 28px 0 0 24px;
+  font-family: "Gilroy";
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+  border: none;
+}
+.header-form button {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  height: 64px;
+  width: 211px;
+  border: none;
+  font-family: "Gilroy";
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  background-color: #333333;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.header-form button:hover {
+  opacity: 0.7;
+}
+.header-form button:focus {
+  opacity: 1;
+}
+
+.header-advantages {
+  display: flex;
+  margin-top: 53px;
+}
+.header-advantages .icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+}
+.header-advantages span {
+  display: flex;
+  align-items: center;
+  font-size: 1.7rem;
+  line-height: 1.76;
+  color: #757095;
+}
+.header-advantages span:first-of-type {
+  margin-right: 30px;
+}
+
+.header-dashboard {
+  position: absolute;
+  top: 121px;
+  right: -109px;
+  width: 845px;
+  height: 685px;
+  filter: drop-shadow(0 69px 55px rgba(0, 0, 0, 0.03)) drop-shadow(0 44px 32px rgba(0, 0, 0, 0.03)) drop-shadow(0 26px 17px rgba(0, 0, 0, 0.0182)) drop-shadow(0 14px 9px rgba(0, 0, 0, 0.015)) drop-shadow(0 6px 4px rgba(0, 0, 0, 0.0118)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.072));
 }/*# sourceMappingURL=main.css.map */

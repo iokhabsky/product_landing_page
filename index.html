@@ -5,14 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="scss/main.css">
-
-    <!-- SVG favicon -->
     <link rel="icon" type="image/svg+xml" href="./img/favicon/favicon.svg">
-    <!-- PNG favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32.png">
-    <!-- ICO favicon -->
     <link rel="icon" href="./img/favicon/favicon.ico" type="image/x-icon">
-    <!-- Apple devices -->
     <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
     <title>Landing Page Start html</title>
 </head>
@@ -20,20 +15,33 @@
 <body>
 
     <header>
+        <svg class="header-wave">
+            <use xlink:href="img/sprite.svg#header_wave"></use>
+        </svg>
         <div class="container">
             <div class="header-nav">
                 <a href="#" class="logo">
-
+                    AR Shakir
                 </a>
                 <nav class="menu">
-                    <a href="#">Product</a>
-                    <a href="#">Template</a>
+                    <a href="#" class="has-dropdown">
+                        Product
+                        <svg class="icon">
+                            <use xlink:href="img/sprite.svg#arrow_down"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="has-dropdown">
+                        Template
+                        <svg class="icon">
+                            <use xlink:href="img/sprite.svg#arrow_down"></use>
+                        </svg>
+                    </a>
                     <a href="#">Blog</a>
                     <a href="#">Pricing</a>
                 </nav>
                 <div class="header-login">
-                    <a href="#" class="btn btn-transparent">Sign In</a>   
-                    <div class="btn btn-base">Start Free</div>
+                    <a href="#" class="h-btn transparent">Sign In</a>   
+                    <div class="h-btn base">Start Free</div>
                 </div>
             </div>
             <div class="header-content">
@@ -53,20 +61,28 @@
                     <label for="headerEmail">
                         Register using email address
                     </label>
-                    <input type="email" name="headerEmail" id="headerEmail" required>
+                    <input type="email" name="headerEmail" id="headerEmail" required placeholder="email@example.com">
                     <button type="submit">Submit</button>
                 </form>
                 <div class="header-advantages">
                     <span>
+                        <svg class="icon">
+                            <use xlink:href="img/sprite.svg#circle_check"></use>
+                        </svg>
                         Free Register
                     </span>
                     <span>
+                        <svg class="icon">
+                            <use xlink:href="img/sprite.svg#circle_check"></use>
+                        </svg>
                         Great Service
                     </span>
                 </div>
             </div>
         </div>
-        <img src="img/header-dashboard.png" alt="header_img">
+        <svg class="header-dashboard">
+            <use xlink:href="img/sprite.svg#header_dashboard"></use>
+        </svg>
     </header>
     <section>
 
