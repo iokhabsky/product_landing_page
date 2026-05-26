@@ -1,3 +1,4 @@
+@import './mixins';
 html {
     font-size: 62.5%;
 }
@@ -47,11 +48,30 @@ body {
     z-index: 200;
 }
 
+.btn-base {
+    color: #fff;
+    background-color: $base_color;
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    max-width: 162px;
+    border-radius: $btn_radius;
+    line-height: 1.875;
+    font-size: 1.6rem;
+    font-family: "Gilroy";
+    font-weight: 600;
+    text-align: center;
+    @include button_hover();
+}
+
 .logo {
     color: #111;
     font-size: 20px;
     font-family: "Gilroy";
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .menu {
@@ -77,4 +97,28 @@ body {
             }
         }
     }
+}
+
+.section-caption-small {
+    margin-bottom: 15px;
+    font-family: "Gilroy";
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $base_color;
+    text-transform: uppercase;
+}
+
+.section-title {
+    margin-bottom: 10px;
+    font-weight: 800;
+    font-size: 4rem;
+    line-height: 1.2;
+}
+
+.section-text {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $section_text_color;
+    line-height: 1.875;
 }

@@ -1,0 +1,10 @@
+@mixin button_hover() {
+  transition: all .25s ease;
+  &:hover {
+    opacity: .7;
+  }
+  &:active,
+  &:focus {
+    opacity: 1;
+  }
+}

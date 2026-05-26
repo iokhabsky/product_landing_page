@@ -1,6 +1,7 @@
 @import './fonts';
 @import './vars';
 @import './general';
+@import './mixins';
 
 // @include font-face('Manrope', 'Manrope-Thin', 100);
 // @include font-face('Manrope', 'Manrope-ExtraLight', 200);
@@ -11,9 +12,10 @@
 @include font-face('Manrope', 'Manrope-Bold', 700);
 @include font-face('Manrope', 'Manrope-ExtraBold', 800);
 
-@include font-face('Gilroy', 'Gilroy-Bold', 600);
-@include font-face('Gilroy', 'Gilroy-SemiBold', 700);
 @include font-face('Gilroy', 'Gilroy-Medium', 500);
+@include font-face('Gilroy', 'Gilroy-SemiBold', 600);
+@include font-face('Gilroy', 'Gilroy-Bold', 700);
+@include font-face('Gilroy', 'Gilroy-Black', 900);
 
 // @import './header.scss';
 
@@ -21,8 +23,7 @@ header {
     position: relative;
     overflow: hidden;
     padding-bottom: 42px;
-    margin-bottom: 60px;
-    border-bottom: 1px solid rgba(#C4C4C4, .4);
+    border-bottom: 1px solid rgba($border_color, .4);
     z-index: 100;
 }
 
@@ -79,6 +80,7 @@ header .logo {
 
         &.transparent {
             color: $font_color;
+
             &:hover {
                 opacity: 0.7;
             }
@@ -92,12 +94,12 @@ header .logo {
 }
 
 .header-content {
-    margin-top: 122px; 
+    margin-top: 122px;
 }
 
 .header-subtitle {
     font-family: "Gilroy";
-    font-weight: 700;
+    font-weight: 600;
     font-size: 2.2rem;
     line-height: 1;
 }
@@ -113,7 +115,7 @@ header .logo {
 
 .header-text {
     max-width: 569px;
-    margin-bottom: 20px;  
+    margin-bottom: 20px;
     color: $header_font_color;
     font-size: 2rem;
     line-height: 1.75;
@@ -131,7 +133,7 @@ header .logo {
         top: 27px;
         font-family: "Gilroy";
         font-size: 1.6rem;
-        font-weight: 600;
+        font-weight: 700;
         line-height: 1.25;
         color: rgba(#000, .4);
     }
@@ -142,7 +144,7 @@ header .logo {
         padding: 28px 0 0 24px;
         font-family: "Gilroy";
         font-size: 2.4rem;
-        font-weight: 600;
+        font-weight: 700;
         color: rgba(#000, .6);
         border: none;
     }
@@ -157,7 +159,7 @@ header .logo {
         font-family: "Gilroy";
         color: #fff;
         font-size: 2rem;
-        font-weight: 600;
+        font-weight: 700;
         background-color: $font_color;
         cursor: pointer;
         transition: all .25s ease;
@@ -175,11 +177,13 @@ header .logo {
 .header-advantages {
     display: flex;
     margin-top: 53px;
+
     .icon {
         width: 20px;
         height: 20px;
         margin-right: 6px;
     }
+
     span {
         display: flex;
         align-items: center;
@@ -199,12 +203,134 @@ header .logo {
     right: -109px;
     width: 845px;
     height: 685px;
-    filter:
-        drop-shadow(0 69px 55px rgba(0, 0, 0, 0.03))
-        drop-shadow(0 44px 32px rgba(0, 0, 0, 0.03))
-        drop-shadow(0 26px 17px rgba(0, 0, 0, 0.0182))
-        drop-shadow(0 14px 9px rgba(0, 0, 0, 0.0150))
-        drop-shadow(0 6px 4px rgba(0, 0, 0, 0.0118))
-        drop-shadow(0 1px 2px rgba(0, 0, 0, 0.072))
+    filter: drop-shadow(0 29px 35px rgba(0, 0, 0, 0.2));
+}
+
+.section-title-small {
+    margin-bottom: 40px;
+    font-family: "Gilroy";
+    font-weight: 600;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.s-brands {
+    padding: 60px 0 80px;
+    border-bottom: 1px solid rgba($border_color, .4);
+}
+
+.brands {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .brand {
+        width: 137px;
+        height: 28px;
+
+        &:not(:last-child) {
+            margin-right: 49px;
+        }
+    }
+}
+
+.s-process {
+    position: relative;
+    min-height: 1832px;
+    padding: 100px 0 80px 0;
+
+    &:before {
+        position: absolute;
+        right: -131px;
+        top: 112px;
+        display: block;
+        content: "";
+
+        width: 456px;
+        height: 456px;
+        border-radius: 50%;
+        background-color: #F5F8FF;
+    }
+}
+
+.s-process-text {
+    position: relative;
+    max-width: 365px;
+    z-index: 600;
+}
+
+.animation_line {
+    position: absolute;
+    top: 142px;
+    width: 1017px;
+    height: 395px;
+}
+
+.s-process-steps {
+    counter-reset: item;
+
+    position: absolute;
+    top: 199px;
+    left: 123px;
+    display: flex;
+    .step {
+        position: relative;
+        h3 {
+            font-weight: 800;
+            font-size: 1.6rem;
+            line-height: 1.875;
+        }
+
+        &::before {
+            display: block;
+            content: "";
+            width: 23px;
+            height: 23px;
+            margin-bottom: 32px;
+            margin-left: 20px;
+            background-color: $border_color;
+            box-shadow: 0 0 0 20px #f3f3f3;
+            border-radius: 7px;
+        }
+
+        &:after {
+            position: absolute;
+            right: 0;
+            top: -100px;
+            display: block;
+            counter-increment: item;
+            content: counter(item);
+            font-family: "Gilroy";
+            font-weight: 900;
+            font-size: 24rem;
+            line-height: 1;
+            opacity: .05;
+        }
+
+        &:first-child {
+            margin-top: 315px;
+            margin-right: 187px;
+        }
+        &:nth-child(2) {
+            margin-top: 185px;
+            margin-right: 56px;
+        }
+        &:nth-child(3) {
+            position: relative;
+            top: -64px;
+        }
+    }
+    .section-text {
+        max-width: 280px;
+    }
+}
+
+
+
+//
+
+.s-process-banner img {
+    margin-top: 500px;
+    width: 400px;
 }
 
