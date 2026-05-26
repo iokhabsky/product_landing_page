@@ -600,4 +600,57 @@ header .logo {
   width: 12px;
   height: 12px;
   margin-left: 10px;
+}
+
+.s-built {
+  padding: 100px 0 130px;
+}
+.s-built .section-title {
+  min-width: 360px;
+  max-width: 370px;
+  padding-right: 40px;
+  margin-bottom: 0;
+  font-size: 3.4rem;
+}
+
+.s-built-aligner {
+  display: flex;
+  align-items: center;
+  padding: 40px 45px;
+  border: 1px solid rgba(196, 196, 196, 0.4);
+  border-radius: 20px;
+}
+
+.built-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.built-items .icon {
+  width: 40px;
+  height: 40px;
+}
+.built-items .item {
+  display: flex;
+  align-items: center;
+}
+.built-items .item span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: #E9ECF2;
+}
+.built-items .item p {
+  max-width: 155px;
+  padding-left: 18px;
+  font-family: "Gilroy";
+  font-size: 2rem;
+  line-height: 1.6;
+}
+.built-items .item:last-child p {
+  max-width: 180px;
 }/*# sourceMappingURL=main.css.map */
