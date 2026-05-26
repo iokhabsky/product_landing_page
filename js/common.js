@@ -3,6 +3,13 @@ window.onload = () => {
     setUI();
 
     function setUI() {
-        // code here
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            loop: true,
+            navigation: {
+                nextEl: '.custom-next',
+                prevEl: '.custom-prev',
+            },
+        });
     }
 }

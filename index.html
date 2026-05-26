@@ -1,303 +1,434 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="scss/main.css">
-    <link rel="icon" type="image/svg+xml" href="./img/favicon/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32.png">
-    <link rel="icon" href="./img/favicon/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
-    <title>Landing Page Start html</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="scss/main.css">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+        <link rel="icon" type="image/svg+xml" href="./img/favicon/favicon.svg">
+        <link rel="icon" type="image/png" sizes="32x32"
+            href="./img/favicon/favicon-32.png">
+        <link rel="icon" href="./img/favicon/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="180x180"
+            href="./img/favicon/apple-touch-icon.png">
+        <title>Landing Page Start html</title>
+    </head>
 
-<body>
+    <body>
 
-    <header>
-        <svg class="header-wave">
-            <use xlink:href="img/sprite.svg#header_wave"></use>
-        </svg>
-        <div class="container">
-            <div class="header-nav">
-                <a href="#" class="logo">
-                    AR Shakir
-                </a>
-                <nav class="menu">
-                    <a href="#" class="has-dropdown">
-                        Product
-                        <svg class="icon">
-                            <use xlink:href="img/sprite.svg#arrow_down"></use>
-                        </svg>
+        <header>
+            <svg class="header-wave">
+                <use xlink:href="img/sprite.svg#header_wave"></use>
+            </svg>
+            <div class="container">
+                <div class="header-nav">
+                    <a href="#" class="logo">
+                        AR Shakir
                     </a>
-                    <a href="#" class="has-dropdown">
-                        Template
-                        <svg class="icon">
-                            <use xlink:href="img/sprite.svg#arrow_down"></use>
-                        </svg>
-                    </a>
-                    <a href="#">Blog</a>
-                    <a href="#">Pricing</a>
-                </nav>
-                <div class="header-login">
-                    <a href="#" class="h-btn transparent">Sign In</a>
-                    <div class="h-btn base">Start Free</div>
+                    <nav class="menu">
+                        <a href="#" class="has-dropdown">
+                            Product
+                            <svg class="icon">
+                                <use
+                                    xlink:href="img/sprite.svg#arrow_down"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="has-dropdown">
+                            Template
+                            <svg class="icon">
+                                <use
+                                    xlink:href="img/sprite.svg#arrow_down"></use>
+                            </svg>
+                        </a>
+                        <a href="#">Blog</a>
+                        <a href="#">Pricing</a>
+                    </nav>
+                    <div class="header-login">
+                        <a href="#" class="h-btn transparent">Sign In</a>
+                        <div class="h-btn base">Start Free</div>
+                    </div>
+                </div>
+                <div class="header-content">
+                    <h3 class="header-subtitle">
+                        Product Growth Solution in Single Platform.
+                    </h3>
+                    <h2 class="header-title">
+                        Managing business payments has never been easier
+                    </h2>
+                    <p class="header-text">
+                        Never at water me might.
+                        On formed merits hunted unable
+                        merely by mr whence or. Possession
+                        the unpleasing simplicity her uncommonly.
+                    </p>
+                    <form action="form.php" class="header-form">
+                        <label for="headerEmail">
+                            Register using email address
+                        </label>
+                        <input type="email" name="headerEmail" id="headerEmail"
+                            required placeholder="email@example.com">
+                        <button type="submit">Submit</button>
+                    </form>
+                    <div class="header-advantages">
+                        <span>
+                            <svg class="icon">
+                                <use
+                                    xlink:href="img/sprite.svg#circle_check"></use>
+                            </svg>
+                            Free Register
+                        </span>
+                        <span>
+                            <svg class="icon">
+                                <use
+                                    xlink:href="img/sprite.svg#circle_check"></use>
+                            </svg>
+                            Great Service
+                        </span>
+                    </div>
                 </div>
             </div>
-            <div class="header-content">
-                <h3 class="header-subtitle">
-                    Product Growth Solution in Single Platform.
-                </h3>
-                <h2 class="header-title">
-                    Managing business payments has never been easier
-                </h2>
-                <p class="header-text">
-                    Never at water me might.
-                    On formed merits hunted unable
-                    merely by mr whence or. Possession
-                    the unpleasing simplicity her uncommonly.
-                </p>
-                <form action="form.php" class="header-form">
-                    <label for="headerEmail">
-                        Register using email address
-                    </label>
-                    <input type="email" name="headerEmail" id="headerEmail" required placeholder="email@example.com">
-                    <button type="submit">Submit</button>
-                </form>
-                <div class="header-advantages">
-                    <span>
-                        <svg class="icon">
-                            <use xlink:href="img/sprite.svg#circle_check"></use>
-                        </svg>
-                        Free Register
-                    </span>
-                    <span>
-                        <svg class="icon">
-                            <use xlink:href="img/sprite.svg#circle_check"></use>
-                        </svg>
-                        Great Service
-                    </span>
-                </div>
-            </div>
-        </div>
-        <svg class="header-dashboard">
-            <use xlink:href="img/sprite.svg#header_dashboard"></use>
-        </svg>
-    </header>
-    <section class="section s-brands">
-        <h3 class="section-title-small">
-            Over 32k+ software businesses growing with AR Shakir
-        </h3>
-        <div class="brands">
-            <svg class="brand">
-                <use xlink:href="img/sprite.svg#openzeppelin"></use>
+            <svg class="header-dashboard">
+                <use xlink:href="img/sprite.svg#header_dashboard"></use>
             </svg>
-            <svg class="brand">
-                <use xlink:href="img/sprite.svg#oracle"></use>
-            </svg>
-            <svg class="brand">
-                <use xlink:href="img/sprite.svg#morpheus"></use>
-            </svg>
-            <svg class="brand">
-                <use xlink:href="img/sprite.svg#samsung"></use>
-            </svg>
-            <svg class="brand">
-                <use xlink:href="img/sprite.svg#monday"></use>
-            </svg>
-            <svg class="brand">
-                <use xlink:href="img/sprite.svg#segment"></use>
-            </svg>
-            <svg class="brand">
-                <use xlink:href="img/sprite.svg#protonet"></use>
-            </svg>
-        </div>
-    </section>
-
-    <section class="section s-process">
-        <div class="container">
-            <div class="s-process-text">
-                <h5 class="section-caption-small">
-                    Stockie Operation Across the world
-                </h5>
-                <h2 class="section-title">
-                    We have best team and best process
-                </h2>
-                <p class="section-text">
-                    Yet bed any for travelling assistance indulgence unpleasing.
-                    Not thoughts all exercise blessing. Indulgence way everything joy.
-                </p>
-                <a href="#" class="btn btn-base">
-                    Get Started
-                </a>
-            </div>
-            <div class="animation">
-                <svg class="animation_line">
-                    <use xlink:href="img/sprite.svg#animation_line"></use>
+        </header>
+        <section class="section s-brands">
+            <h3 class="section-title-small">
+                Over 32k+ software businesses growing with AR Shakir
+            </h3>
+            <div class="brands">
+                <svg class="brand">
+                    <use xlink:href="img/sprite.svg#openzeppelin"></use>
+                </svg>
+                <svg class="brand">
+                    <use xlink:href="img/sprite.svg#oracle"></use>
+                </svg>
+                <svg class="brand">
+                    <use xlink:href="img/sprite.svg#morpheus"></use>
+                </svg>
+                <svg class="brand">
+                    <use xlink:href="img/sprite.svg#samsung"></use>
+                </svg>
+                <svg class="brand">
+                    <use xlink:href="img/sprite.svg#monday"></use>
+                </svg>
+                <svg class="brand">
+                    <use xlink:href="img/sprite.svg#segment"></use>
+                </svg>
+                <svg class="brand">
+                    <use xlink:href="img/sprite.svg#protonet"></use>
                 </svg>
             </div>
-            <div class="s-process-steps">
-                <div class="step">
-                    <h3>
-                        Project Discovery Call
-                    </h3>
+        </section>
+
+        <section class="section s-process">
+            <div class="container">
+                <div class="s-process-text">
+                    <h5 class="section-caption-small">
+                        Stockie Operation Across the world
+                    </h5>
+                    <h2 class="section-title">
+                        We have best team and best process
+                    </h2>
                     <p class="section-text">
-                        Party we years to order allow asked of.
-                        We so opinion friends me message as delight.
+                        Yet bed any for travelling assistance indulgence
+                        unpleasing.
+                        Not thoughts all exercise blessing. Indulgence way
+                        everything joy.
                     </p>
+                    <a href="#" class="btn btn-base">
+                        Get Started
+                    </a>
                 </div>
-                <div class="step">
-                    <h3>
-                        Get main opinion
-                    </h3>
-                    <p class="section-text">
-                        His defective nor convinced residence own.
-                        Connection has put impossible own apartments boisterous.
-                    </p>
+                <div class="animation">
+                    <svg class="animation_line">
+                        <use xlink:href="img/sprite.svg#animation_line"></use>
+                    </svg>
                 </div>
-                <div class="step">
-                    <h3>
-                        Finally project start
-                    </h3>
-                    <p class="section-text">
-                        From they fine john he give of rich he.
-                        They age and draw mrs like.
-                        Improving end distrusts may instantly.
-                    </p>
+                <div class="s-process-steps">
+                    <div class="step">
+                        <h3>
+                            Project Discovery Call
+                        </h3>
+                        <p class="section-text">
+                            Party we years to order allow asked of.
+                            We so opinion friends me message as delight.
+                        </p>
+                    </div>
+                    <div class="step">
+                        <h3>
+                            Get main opinion
+                        </h3>
+                        <p class="section-text">
+                            His defective nor convinced residence own.
+                            Connection has put impossible own apartments
+                            boisterous.
+                        </p>
+                    </div>
+                    <div class="step">
+                        <h3>
+                            Finally project start
+                        </h3>
+                        <p class="section-text">
+                            From they fine john he give of rich he.
+                            They age and draw mrs like.
+                            Improving end distrusts may instantly.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="s-process-banner">
-            <img src="img/process_banner.jpg" alt="process banner">
-            <h2 class="section-title">
-                Push your product to next level.
-            </h2>
-            <p>
-                End-to-end payments and financial management in
-                a single solution. Meet the right platform to help realize.
-            </p>
-            <a href="#" class="btn btn-red">Get Started</a>
-        </div>
-    </section>
-
-    <section class="section s-grow">
-        <svg class="bg-image">
-            <use xlink:href="img/sprite.svg#business_bg"></use>
-        </svg>
-        <div class="container">
-            <h2 class="section-title text-center">We help your business grow faster.</h2>
-            <p class="section-text text-center">
-                Why kept very ever home mrs. Considered sympathize ten
-                uncommonly occasional assistance sufficient.
-            </p>
-            <div class="grow-items">
-                <div class="g-item">
-                    <svg class="icon">
-                        <use xlink:href="img/sprite.svg#winner"></use>
-                    </svg>
-                    <h4 class="g-title">
-                        Offending belonging
-                    </h4>
-                    <p class="g-text section-text">
-                        Letter of on become he tended active enable to.
-                        Vicinity relation sensible sociable surprise
-                        screened no up as.
-                    </p>
-                    <a href="#" class="g-link">
-                        Read More
-                        <svg class="icon">
-                            <use xlink:href="img/sprite.svg#arrow"></use>
-                        </svg>
-                    </a>
-                </div>
-                <div class="g-item">
-                    <svg class="icon">
-                        <use xlink:href="img/sprite.svg#plant"></use>
-                    </svg>
-                    <h4 class="g-title">
-                        Offending belonging
-                    </h4>
-                    <p class="g-text section-text">
-                        Letter of on become he tended active enable to.
-                        Vicinity relation sensible sociable surprise
-                        screened no up as.
-                    </p>
-                    <a href="#" class="g-link">
-                        Read More
-                        <svg class="icon">
-                            <use xlink:href="img/sprite.svg#arrow"></use>
-                        </svg>
-                    </a>
-                </div>
-                <div class="g-item">
-                    <svg class="icon">
-                        <use xlink:href="img/sprite.svg#sun"></use>
-                    </svg>
-                    <h4 class="g-title">
-                        Offending belonging
-                    </h4>
-                    <p class="g-text section-text">
-                        Letter of on become he tended active enable to.
-                        Vicinity relation sensible sociable surprise
-                        screened no up as.
-                    </p>
-                    <a href="#" class="g-link">
-                        Read More
-                        <svg class="icon">
-                            <use xlink:href="img/sprite.svg#arrow"></use>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <a href="#" class="btn btn-base btn-more">
-                More About Platform
-            </a>
-        </div>
-    </section>
-
-    <section class="section s-built">
-        <div class="container">
-            <div class="s-built-aligner">
+            <div class="s-process-banner">
+                <img src="img/process_banner.jpg" alt="process banner">
                 <h2 class="section-title">
-                    Among leave law built now.
+                    Push your product to next level.
                 </h2>
-                <div class="built-items">
-                    <div class="item">
-                        <span>
-                            <svg class="icon">
-                                <use xlink:href="img/sprite.svg#star"></use>
-                            </svg>
-                        </span>
-                        <p>
-                            Village did remov enjoyed
+                <p>
+                    End-to-end payments and financial management in
+                    a single solution. Meet the right platform to help realize.
+                </p>
+                <a href="#" class="btn btn-red">Get Started</a>
+            </div>
+        </section>
+
+        <section class="section s-grow">
+            <svg class="bg-image">
+                <use xlink:href="img/sprite.svg#business_bg"></use>
+            </svg>
+            <div class="container">
+                <h2 class="section-title text-center">We help your business grow
+                    faster.</h2>
+                <p class="section-text text-center">
+                    Why kept very ever home mrs. Considered sympathize ten
+                    uncommonly occasional assistance sufficient.
+                </p>
+                <div class="grow-items">
+                    <div class="g-item">
+                        <svg class="icon">
+                            <use xlink:href="img/sprite.svg#winner"></use>
+                        </svg>
+                        <h4 class="g-title">
+                            Offending belonging
+                        </h4>
+                        <p class="g-text section-text">
+                            Letter of on become he tended active enable to.
+                            Vicinity relation sensible sociable surprise
+                            screened no up as.
                         </p>
+                        <a href="#" class="g-link">
+                            Read More
+                            <svg class="icon">
+                                <use xlink:href="img/sprite.svg#arrow"></use>
+                            </svg>
+                        </a>
                     </div>
-                    <div class="item">
-                        <span>
-                            <svg class="icon">
-                                <use xlink:href="img/sprite.svg#medal"></use>
-                            </svg>
-                        </span>
-                        <p>
-                            Nay likely length sooner
+                    <div class="g-item">
+                        <svg class="icon">
+                            <use xlink:href="img/sprite.svg#plant"></use>
+                        </svg>
+                        <h4 class="g-title">
+                            Promotion & provision
+                        </h4>
+                        <p class="g-text section-text">
+                            Letter of on become he tended active enable to.
+                            Vicinity relation sensible sociable surprise
+                            screened no up as.
                         </p>
+                        <a href="#" class="g-link">
+                            Read More
+                            <svg class="icon">
+                                <use xlink:href="img/sprite.svg#arrow"></use>
+                            </svg>
+                        </a>
                     </div>
-                    <div class="item">
-                        <span>
-                            <svg class="icon">
-                                <use xlink:href="img/sprite.svg#lamp"></use>
-                            </svg>
-                        </span>
-                        <p>
-                            Expense windows adapted
+                    <div class="g-item">
+                        <svg class="icon">
+                            <use xlink:href="img/sprite.svg#sun"></use>
+                        </svg>
+                        <h4 class="g-title">
+                            Blessing application
+                        </h4>
+                        <p class="g-text section-text">
+                            Letter of on become he tended active enable to.
+                            Vicinity relation sensible sociable surprise
+                            screened no up as.
                         </p>
+                        <a href="#" class="g-link">
+                            Read More
+                            <svg class="icon">
+                                <use xlink:href="img/sprite.svg#arrow"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-base btn-more">
+                    More About Platform
+                </a>
+            </div>
+        </section>
+
+        <section class="section s-built">
+            <div class="container">
+                <div class="s-built-aligner">
+                    <h2 class="section-title">
+                        Among leave law built now.
+                    </h2>
+                    <div class="built-items">
+                        <div class="item">
+                            <span>
+                                <svg class="icon">
+                                    <use xlink:href="img/sprite.svg#star"></use>
+                                </svg>
+                            </span>
+                            <p>
+                                Village did remov enjoyed
+                            </p>
+                        </div>
+                        <div class="item">
+                            <span>
+                                <svg class="icon">
+                                    <use
+                                        xlink:href="img/sprite.svg#medal"></use>
+                                </svg>
+                            </span>
+                            <p>
+                                Nay likely length sooner
+                            </p>
+                        </div>
+                        <div class="item">
+                            <span>
+                                <svg class="icon">
+                                    <use xlink:href="img/sprite.svg#lamp"></use>
+                                </svg>
+                            </span>
+                            <p>
+                                Expense windows adapted
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section s-offering">
+            <div class="container">
+                <div class="offers">
+                    <div class="offer">
+                        <h2 class="offer-title">
+                            Offend belong promote provision
+                        </h2>
+                        <p class="offer-text">
+                            Wise busy past both park when an ye no.
+                            Nay likely her length sooner thrown sex lively
+                            income.
+                        </p>
+                        <a href="#" class="btn btn-base">
+                            Read More
+                        </a>
+                    </div>
+                    <div class="offer">
+                        <h2 class="offer-title">
+                            Consulted ourselves it blessing welcom
+                        </h2>
+                        <p class="offer-text">
+                            The expense windows adapted sir.
+                            Wrong widen drawn ample eat off doors money.
+                        </p>
+                        <a href="#" class="btn btn-base">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section s-testimonials">
+            <div class="container">
+                <h5 class="section-caption-small">
+                    Testimonials
+                </h5>
+                <h2 class="section-title">
+                    Check what our clients are saying
+                </h2>
+                <div class="swiper reviews-slider">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide review-slide">
+                            <div class="review-img">
+                                <div class="decor">
+                                    <svg class="icon">
+                                        <use xlink:href="img/sprite.svg#slider_decor1"></use>
+                                    </svg>
+                                    <svg class="icon">
+                                        <use xlink:href="img/sprite.svg#slider_decor2"></use>
+                                    </svg>
+                                    <svg class="icon">
+                                        <use xlink:href="img/sprite.svg#slider_decor3"></use>
+                                    </svg>
+                                    <svg class="icon">
+                                        <use xlink:href="img/sprite.svg#small_squares"></use>
+                                    </svg>
+                                </div>
+                                <img src="img/beauty.png" alt="beauty girl">
+                            </div>
+                            <div class="review-text">
+                                <svg class="icon">
+                                    <use xlink:href="img/sprite.svg#coma"></use>
+                                </svg>
+                                <div class="review-rating r-5">
+                                    <svg class="icon">
+                                        <use xlink:href="img/sprite.svg#review_star"></use>
+                                    </svg>
+                                    <svg class="icon">
+                                        <use xlink:href="img/sprite.svg#review_star"></use>
+                                    </svg>
+                                    <svg class="icon">
+                                        <use xlink:href="img/sprite.svg#review_star"></use>
+                                    </svg>
+                                    <svg class="icon">
+                                        <use xlink:href="img/sprite.svg#review_star"></use>
+                                    </svg>
+                                    <svg class="icon">
+                                        <use xlink:href="img/sprite.svg#review_star"></use>
+                                    </svg>
+                                </div>
+                                <p class="review-text">
+                                    This is the best service in my life. 
+                                    In my opinion, everyone should try it. 
+                                    Because if not, then why even bother?
+                                    Or maybe you know better O_o ?
+                                </p>
+                                <div class="review-author">
+                                    <span class="reviewer">
+                                        <span>AR Shakir</span>
+                                        <span>CEO GetNextDesign</span>
+                                    </span>
+                                    <svg class="icon">
+                                        <use xlink:href="img/sprite.svg#segment"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">Slide 2</div>
+                        <div class="swiper-slide">Slide 3</div>
+                    </div>
+                    <div class="custom-prev">
+                        <svg class="icon">
+                            <use xlink:href="img/sprite.svg#slider_prev"></use>
+                        </svg>
+                    </div>
+                    <div class="custom-next">
+                        <svg class="icon">
+                            <use xlink:href="img/sprite.svg#slider_next"></use>
+                        </svg>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-
-    <script src="js/common.js"></script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+        <script src="js/common.js"></script>
+    </body>
 
 </html>
