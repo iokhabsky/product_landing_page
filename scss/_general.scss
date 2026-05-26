@@ -48,6 +48,10 @@ body {
     z-index: 200;
 }
 
+.text-center {
+    text-align: center;
+}
+
 .btn-base {
     color: #fff;
     background-color: $base_color;
@@ -65,6 +69,17 @@ body {
     font-weight: 600;
     text-align: center;
     @include button_hover();
+}
+
+.btn-red {
+    background-color: $red;
+    color: #fff;
+}
+
+.btn-more {
+    display: block;
+    max-width: 259px;
+    border-radius: 10px;
 }
 
 .logo {

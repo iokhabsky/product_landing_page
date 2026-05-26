@@ -236,8 +236,9 @@ header .logo {
 
 .s-process {
     position: relative;
-    min-height: 1832px;
-    padding: 100px 0 80px 0;
+    padding: 100px 0 0 0;
+    margin-bottom: -185px;
+    overflow: hidden;
 
     &:before {
         position: absolute;
@@ -255,7 +256,7 @@ header .logo {
 
 .s-process-text {
     position: relative;
-    max-width: 365px;
+    width: 365px;
     z-index: 600;
 }
 
@@ -273,8 +274,10 @@ header .logo {
     top: 199px;
     left: 123px;
     display: flex;
+
     .step {
         position: relative;
+
         h3 {
             font-weight: 800;
             font-size: 1.6rem;
@@ -296,13 +299,13 @@ header .logo {
         &:after {
             position: absolute;
             right: 0;
-            top: -100px;
+            top: -68px;
             display: block;
             counter-increment: item;
             content: counter(item);
             font-family: "Gilroy";
             font-weight: 900;
-            font-size: 24rem;
+            font-size: 20rem;
             line-height: 1;
             opacity: .05;
         }
@@ -311,26 +314,144 @@ header .logo {
             margin-top: 315px;
             margin-right: 187px;
         }
+
         &:nth-child(2) {
             margin-top: 185px;
             margin-right: 56px;
         }
+
         &:nth-child(3) {
             position: relative;
             top: -64px;
         }
     }
+
     .section-text {
-        max-width: 280px;
+        min-width: 285px;
+        max-width: 285px;
     }
 }
 
+.s-process-banner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 830px;
+    height: 400px;
+    margin-top: 435px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    border-radius: 15px;
+    text-align: center;
 
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#16012C, .5);
+        z-index: 10;
+    }
 
-//
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 5;
+    }
 
-.s-process-banner img {
-    margin-top: 500px;
-    width: 400px;
+    .section-title {
+        position: relative;
+        margin-bottom: 0;
+        z-index: 11;
+        color: #fff;
+    }
+
+    p {
+        position: relative;
+        max-width: 604px;
+        margin: 15px 0 20px 0;
+        font-family: "Gilroy";
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 1.5;
+        color: #fff;
+        z-index: 11;
+    }
+
+    .btn {
+        position: relative;
+        z-index: 11;
+    }
 }
 
+.s-grow {
+    position: relative;
+    overflow: hidden;
+    padding-top: 290px;
+    padding-bottom: 159px;
+
+    .section-text {
+        max-width: 604px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bg-image {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 2560px;
+        height: 1113px;
+        transform: translateX(-50%);
+    }
+
+    .btn-more {
+        margin-top: 40px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.grow-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    margin-top: 75px;
+}
+
+.g-item {
+    padding: 40px 30px;
+    background-color: #fff;
+    border-radius: 20px;
+
+    .icon {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+.g-title {
+    margin-top: 25px;
+    font-size: 2.4rem;
+    line-height: 2.5;
+}
+
+.g-link {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #01966B;
+    @include button_hover();
+
+    .icon {
+        width: 12px;
+        height: 12px;
+        margin-left: 10px;
+    }
+}
