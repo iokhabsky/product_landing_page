@@ -93,7 +93,7 @@ body {
   border-radius: 10px;
 }
 
-.logo {
+.logo, .footer-title, .footer-links a:first-child {
   color: #111;
   font-size: 20px;
   font-family: "Gilroy";
@@ -215,7 +215,7 @@ header {
   z-index: 100;
 }
 
-header .logo {
+header .logo, header .footer-title, header .footer-links a:first-child, .footer-links header a:first-child {
   margin-right: auto;
 }
 
@@ -1041,4 +1041,111 @@ header .logo {
   height: 60px;
   max-width: none;
   border-radius: 5px;
+}
+
+.footer {
+  padding: 123px 0 100px 0;
+}
+.footer .logo, .footer .footer-title, .footer .footer-links a:first-child, .footer-links .footer a:first-child {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.8fr;
+}
+.footer-columns .footer-column:first-child {
+  padding-right: 45px;
+}
+
+.footer-web-links {
+  display: flex;
+  align-items: center;
+}
+.footer-web-links a {
+  display: inline-block;
+  margin-right: 16px;
+}
+.footer-web-links .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer-links a {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #0F0E2C;
+}
+.footer-links a:not(:last-child), .footer-links a:not(:first-child) {
+  margin-bottom: 5px;
+}
+.footer-links a:hover {
+  color: #5D5FEF;
+}
+.footer-links a:first-child {
+  line-height: 21px;
+}
+
+.footer-info {
+  font-size: 1.6rem;
+  line-height: 1.625;
+  font-weight: 500;
+  color: rgba(15, 14, 44, 0.5);
+}
+
+.subscription-form {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 21px 0;
+}
+.subscription-form input {
+  height: 52px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #F9F9F9;
+  font-family: "Manrope";
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: rgba(15, 14, 44, 0.7);
+  border: none;
+  outline: none;
+}
+.subscription-form input::-moz-placeholder {
+  font-family: "Manrope";
+  font-weight: 500;
+  color: rgba(15, 14, 44, 0.2);
+}
+.subscription-form input::placeholder {
+  font-family: "Manrope";
+  font-weight: 500;
+  color: rgba(15, 14, 44, 0.2);
+}
+.subscription-form button {
+  width: 149px;
+  height: 52px;
+  font-size: 1.6rem;
+  font-family: "Manrope";
+  background-color: #00E1F0;
+  color: #fff;
+}
+.subscription-form button:hover {
+  background-color: #1ca8b1;
+}
+.subscription-form button:active {
+  background-color: #00E1F0;
+}
+
+.footer-copyright {
+  padding-top: 40px;
+  margin-top: 60px;
+  font-weight: 500;
+  text-align: center;
+  border-top: 2px solid rgba(196, 196, 196, 0.4);
 }/*# sourceMappingURL=main.css.map */
