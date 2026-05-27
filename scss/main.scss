@@ -393,6 +393,7 @@ header .logo {
 
 .s-grow {
     position: relative;
+    min-height: 1113px;
     overflow: hidden;
     padding-top: 290px;
     padding-bottom: 159px;
@@ -572,12 +573,14 @@ header .logo {
 
 .review-img {
     position: relative;
-    min-width: 396px;
-    padding: 45px;
+    padding: 67px 45px;
 
     img {
         position: relative;
+        width: 402px;
+        height: 539px;
         z-index: 50;
+        object-fit: cover;
     }
 
     .decor {
@@ -587,7 +590,7 @@ header .logo {
 
             &:first-child {
                 left: 0;
-                top: 0;
+                top: 18px;
                 width: 96px;
                 height: 98px;
             }
@@ -595,7 +598,7 @@ header .logo {
             &:nth-child(2) {
                 width: 133px;
                 height: 133px;
-                right: 0;
+                right: -13px;
                 bottom: 0;
             }
 
@@ -603,7 +606,7 @@ header .logo {
                 width: 126px;
                 height: 20px;
                 left: 145px;
-                bottom: 0;
+                bottom: 15px;
             }
 
             &:nth-child(4) {
@@ -618,6 +621,7 @@ header .logo {
 .review-text {
     max-width: 554px;
     margin-left: auto;
+    margin-right: 20px;
     font-size: 3rem;
     line-height: 1.36;
     font-weight: 600;
@@ -704,3 +708,156 @@ header .logo {
         }
     }
 }
+
+.s-download {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 193px;
+    min-height: 699px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    background-image: url(../img/sprite/download_bg.svg);
+    text-align: center;
+
+    .section-caption-small {
+        margin-bottom: 0;
+    }
+
+    .section-title {
+        max-width: 700px;
+        margin: 20px 0 23px;
+    }
+
+    .section-text {
+        font-size: 2rem;
+        margin-bottom: 29px;
+    }
+
+    .download-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 4px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 178px;
+            padding: 0;
+            line-height: 5.3rem;
+        }
+    }
+
+    .btn-black {
+        margin-left: 11px;
+    }
+}
+
+.s-posts {
+    padding: 23px 0 100px;
+
+    img {
+        border-radius: 10px;
+    }
+
+    .posts-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .posts {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 30px;
+        margin-top: 56px;
+
+        .post-title {
+            margin-top: 11px;
+            font-weight: 800;
+        }
+    }
+
+    .post-category {
+        margin-top: 14px;
+
+        a {
+            display: inline-block;
+            margin-right: 20px;
+            font-family: "Gilroy";
+            font-weight: 500;
+            font-size: 1.6rem;
+            line-height: 1.875;
+            color: #64607D;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .posts-big {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .post {
+            width: calc(50% - 15px);
+        }
+
+        .post-title {
+            font-size: 2rem;
+            line-height: 1.8;
+        }
+
+        .post-text {
+            margin-top: 8px;
+            letter-spacing: -.5px;
+            @extend .section-text
+        }
+    }
+
+    .posts-small {
+        .post {
+            position: relative;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid rgba($border_color, .4);
+
+            img {
+                width: 110px;
+                margin-right: 16px;
+            }
+
+            .post-category {
+                margin-top: 0;
+            }
+
+            .post-title {
+                margin-top: 0;
+                font-size: 1.8rem;
+                line-height: 1.36;
+            }
+
+            &:first-child {
+                padding-bottom: 27px;
+            }
+
+            &:not(:first-child) {
+                padding: 27px 0 27px;
+            }
+        }
+    }
+}
+
