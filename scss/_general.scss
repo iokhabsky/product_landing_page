@@ -27,6 +27,11 @@ ul {
     }
 }
 
+button {
+    border: none;
+    cursor: pointer;
+}
+
 input,button {
     &:focus {
         outline: none;
