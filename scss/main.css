@@ -918,6 +918,10 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
   height: 100%;
   z-index: 32;
 }
+.s-posts .posts .post-link:hover ~ .post-title,
+.s-posts .posts .post-link:hover ~ .post-description .post-title {
+  text-decoration: underline;
+}
 .s-posts .post-category {
   position: relative;
   z-index: 33;
