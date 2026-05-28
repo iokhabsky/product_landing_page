@@ -8,3 +8,59 @@
     opacity: 1;
   }
 }
+
+@mixin animateInLeft() {
+  position: relative;
+  left: -100px;
+  opacity: 0;
+  transform: scale(.9);
+  transition: opacity, transform, left, 1200ms ease;
+
+  &.animated {
+    left: 0;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@mixin animateInRight() {
+  position: relative;
+  right: -100px;
+  opacity: 0;
+  transform: scale(.9);
+  transition: opacity, transform, left, 1200ms ease;
+
+  &.animated {
+    right: 0;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@mixin animateInUp() {
+  position: relative;
+  top: -100px;
+  opacity: 0;
+  transform: scale(.9);
+  transition: opacity, transform, top, 1200ms ease;
+
+  &.animated {
+    top: 0;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@mixin animateInDown() {
+  position: relative;
+  bottom: -100px;
+  opacity: 0;
+  transform: scale(.9);
+  transition: opacity, transform, bottom, 1200ms ease;
+
+  &.animated {
+    bottom: 0;
+    opacity: 1;
+    transform: scale(1);
+  }
+}

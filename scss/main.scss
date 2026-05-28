@@ -95,6 +95,8 @@ header .logo {
 
 .header-content {
     margin-top: 122px;
+
+    @include animateInLeft();
 }
 
 .header-subtitle {
@@ -217,6 +219,8 @@ header .logo {
 .s-brands {
     padding: 60px 0 80px;
     border-bottom: 1px solid rgba($border_color, .4);
+
+    @include animateInDown();
 }
 
 .brands {
@@ -255,9 +259,10 @@ header .logo {
 }
 
 .s-process-text {
-    position: relative;
     width: 365px;
     z-index: 600;
+
+    @include animateInLeft();
 }
 
 #animation_line {
@@ -307,6 +312,16 @@ header .logo {
             line-height: 1.875;
         }
 
+        p, h3 {
+            opacity: 0;
+            transform: scale(.9);
+            transition: opacity, transform, 1200ms ease;
+        }
+
+        p {
+            transition-delay: 400ms;
+        }
+
         &::before {
             display: block;
             content: "";
@@ -350,8 +365,15 @@ header .logo {
             top: -64px;
         }
 
-        &.active:before {
-            background-color: $red;
+        &.active {
+            &:before {
+                background-color: $red;
+            }
+
+            h3,p {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
     }
 
@@ -362,7 +384,6 @@ header .logo {
 }
 
 .s-process-banner {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -375,6 +396,10 @@ header .logo {
     overflow: hidden;
     border-radius: 15px;
     text-align: center;
+
+    z-index: 100;
+
+    @include animateInUp();
 
     &:before {
         position: absolute;
@@ -461,6 +486,16 @@ header .logo {
     background-color: #fff;
     border-radius: 20px;
 
+    &:nth-child(2) {
+        transition-delay: 200ms;
+    }
+
+    &:nth-child(3) {
+        transition-delay: 400ms;
+    }
+
+    @include animateInUp();
+
     .icon {
         width: 42px;
         height: 42px;
@@ -488,6 +523,7 @@ header .logo {
 
 .s-built {
     padding: 100px 0 130px;
+
     .section-title {
         min-width: 360px;
         max-width: 370px;
@@ -503,6 +539,8 @@ header .logo {
     padding: 40px 45px;
     border: 1px solid rgba($border_color, .4);
     border-radius: 20px;
+
+    @include animateInUp();
 }
 
 .built-items {
@@ -563,6 +601,12 @@ header .logo {
     background-color: #F8F9FD;
     border-radius: 20px;
     text-align: center;
+
+    @include animateInUp();
+
+    &:nth-child(2) {
+        transition-delay: 200ms;
+    }
 }
 
 .offer-title {
@@ -582,13 +626,13 @@ header .logo {
 }
 
 .swiper {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .s-testimonials {
     padding-bottom: 94px;
-    
+
     .section-title,
     .section-caption-small {
         text-align: center;
@@ -601,8 +645,9 @@ header .logo {
 }
 
 .review-img {
-    position: relative;
     padding: 67px 45px;
+
+    @include animateInLeft();
 
     img {
         position: relative;
@@ -647,21 +692,28 @@ header .logo {
         }
     }
 }
+
 .review-text {
     max-width: 554px;
     margin-left: auto;
     margin-right: 20px;
-    font-size: 3rem;
-    line-height: 1.36;
-    font-weight: 600;
 
-    > .icon {
+    @include animateInRight();
+
+    p {
+        font-size: 3rem;
+        line-height: 1.36;
+        font-weight: 600;
+    }
+
+    >.icon {
         width: 31px;
         height: 27px;
     }
 
 
 }
+
 .review-rating {
     display: flex;
     align-items: center;
@@ -705,6 +757,7 @@ header .logo {
 }
 
 .reviews-slider {
+
     .custom-prev,
     .custom-next {
         display: flex;
@@ -731,6 +784,7 @@ header .logo {
         .custom-prev {
             left: 15px;
         }
+
         .custom-next {
             right: auto;
             left: 417px;
@@ -804,6 +858,8 @@ header .logo {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @include animateInUp();
     }
 
     .posts {
@@ -831,8 +887,9 @@ header .logo {
             z-index: 32;
 
             &:hover {
-                ~ .post-title,
-                ~ .post-description .post-title {
+
+                ~.post-title,
+                ~.post-description .post-title {
                     text-decoration: underline;
                 }
             }
@@ -864,6 +921,8 @@ header .logo {
         align-items: flex-start;
         justify-content: space-between;
 
+        @include animateInLeft();
+
         .post {
             width: calc(50% - 15px);
         }
@@ -881,6 +940,9 @@ header .logo {
     }
 
     .posts-small {
+
+        @include animateInRight();
+
         .post {
             position: relative;
             display: flex;
@@ -933,18 +995,23 @@ header .logo {
         font-size: 5rem;
         line-height: 1.2;
     }
+
     .section-text {
         margin-bottom: 0;
         font-size: 2rem;
         line-height: 1.5;
     }
+
     .section-content {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
+
     .section-description {
         max-width: 485px;
+
+        @include animateInLeft();
     }
 }
 
@@ -953,6 +1020,8 @@ header .logo {
     width: 100%;
     max-width: 370px;
     flex-direction: column;
+
+    @include animateInRight();
 
     input[type="email"],
     input[type="password"] {
@@ -1018,6 +1087,7 @@ header .logo {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
     a {
         font-size: 1.6rem;
         line-height: 1.5;
@@ -1085,7 +1155,7 @@ header .logo {
         color: #fff;
 
         &:hover {
-           background-color: #1ca8b1; 
+            background-color: #1ca8b1;
         }
 
         &:active {

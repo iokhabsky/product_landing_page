@@ -29,22 +29,29 @@ window.onload = () => {
         }, 2400);
     }
 
+    function showBlocks() {
+        const animatedItems = document.querySelectorAll(".js-animate");
+        animatedItems.forEach(item => observer.observe(item));
+    }
+
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     animateLine();
                     observer.unobserve(entry.target);
+                    entry.target.classList.add("animated");
                 }
             });
         },
         {
-            threshold: 0.55,
+            threshold: 0.5,
         }
     );
 
-    observer.observe(document.querySelector(".s-process"));
+    observer.observe(document.querySelector("#animation_line"));
 
+    showBlocks();
     setUI();
 
     function setUI() {
