@@ -408,7 +408,6 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
   font-family: "Gilroy";
   font-weight: 600;
   font-size: 2.2rem;
-  text-align: center;
 }
 
 .s-brands {
@@ -576,7 +575,6 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
   margin-right: auto;
   overflow: hidden;
   border-radius: 15px;
-  text-align: center;
   z-index: 100;
   position: relative;
   top: -100px;
@@ -792,7 +790,6 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
   padding: 38px;
   background-color: #F8F9FD;
   border-radius: 20px;
-  text-align: center;
   position: relative;
   top: -100px;
   opacity: 0;
@@ -831,10 +828,6 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
 
 .s-testimonials {
   padding-bottom: 94px;
-}
-.s-testimonials .section-title,
-.s-testimonials .section-caption-small {
-  text-align: center;
 }
 .s-testimonials .review-slide {
   display: flex;
@@ -993,7 +986,6 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
   background-position: center center;
   background-size: 100% 100%;
   background-image: url(../img/sprite/download_bg.svg);
-  text-align: center;
 }
 .s-download .section-caption-small {
   margin-bottom: 0;
@@ -1353,6 +1345,5 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
   padding-top: 40px;
   margin-top: 60px;
   font-weight: 500;
-  text-align: center;
   border-top: 2px solid rgba(196, 196, 196, 0.4);
 }/*# sourceMappingURL=main.css.map */

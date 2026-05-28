@@ -37,19 +37,21 @@ window.onload = () => {
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
-                if (entry.isIntersecting) {
+                if (!entry.isIntersecting) return;
+
+                if (entry.target.id === "animation_line") {
                     animateLine();
-                    observer.unobserve(entry.target);
-                    entry.target.classList.add("animated");
                 }
+
+                entry.target.classList.add("animated");
+
+                observer.unobserve(entry.target);
             });
         },
         {
             threshold: 0.5,
         }
     );
-
-    observer.observe(document.querySelector("#animation_line"));
 
     showBlocks();
     setUI();
