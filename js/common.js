@@ -12,19 +12,16 @@ window.onload = () => {
         let currStep = 0;
         setTimeout(() => {
             linePath.style.strokeDashoffset = lineLength * 0.66;
-            allSteps[currStep].classList.add("active");
             currStep++;
         }, 0);
 
         setTimeout(() => {
             linePath.style.strokeDashoffset = lineLength * 0.33;
-            allSteps[currStep].classList.add("active");
             currStep++;
         }, 1200);
 
         setTimeout(() => {
             linePath.style.strokeDashoffset = 0;
-            allSteps[currStep].classList.add("active");
             currStep++;
         }, 2400);
     }

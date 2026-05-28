@@ -262,6 +262,29 @@ header .logo {
     z-index: 600;
 
     @include animateInLeft();
+
+    &.animated {
+        ~ .s-process-steps {
+            .step {
+                h3, p {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+
+                &:before {
+                    background-color: $red;
+                }
+
+                &:nth-child(2):before {
+                    transition-delay: 1400ms;
+                }
+
+                &:nth-child(3):before {
+                    transition-delay: 2800ms;
+                }
+            }
+        }
+    }
 }
 
 #animation_line {
@@ -310,10 +333,6 @@ header .logo {
             transition: opacity, transform, 1200ms ease;
         }
 
-        p {
-            transition-delay: 400ms;
-        }
-
         &::before {
             display: block;
             content: "";
@@ -325,7 +344,6 @@ header .logo {
             box-shadow: 0 0 0 20px #f3f3f3;
             border-radius: 7px;
             transition: background-color, .25s ease;
-            transition-delay: 600ms;
         }
 
         &:after {
@@ -355,17 +373,6 @@ header .logo {
         &:nth-child(3) {
             position: relative;
             top: -64px;
-        }
-
-        &.active {
-            &:before {
-                background-color: $red;
-            }
-
-            h3,p {
-                opacity: 1;
-                transform: scale(1);
-            }
         }
     }
 

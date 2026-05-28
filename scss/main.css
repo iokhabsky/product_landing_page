@@ -470,6 +470,19 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
   opacity: 1;
   transform: scale(1);
 }
+.s-process-text.animated ~ .s-process-steps .step h3, .s-process-text.animated ~ .s-process-steps .step p {
+  opacity: 1;
+  transform: scale(1);
+}
+.s-process-text.animated ~ .s-process-steps .step:before {
+  background-color: #FF7F5C;
+}
+.s-process-text.animated ~ .s-process-steps .step:nth-child(2):before {
+  transition-delay: 1400ms;
+}
+.s-process-text.animated ~ .s-process-steps .step:nth-child(3):before {
+  transition-delay: 2800ms;
+}
 
 #animation_line {
   position: absolute;
@@ -510,9 +523,6 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
   transform: scale(0.9);
   transition: opacity, transform, 1200ms ease;
 }
-.s-process-steps .step p {
-  transition-delay: 400ms;
-}
 .s-process-steps .step::before {
   display: block;
   content: "";
@@ -524,7 +534,6 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
   box-shadow: 0 0 0 20px #f3f3f3;
   border-radius: 7px;
   transition: background-color, 0.25s ease;
-  transition-delay: 600ms;
 }
 .s-process-steps .step:after {
   position: absolute;
@@ -550,13 +559,6 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
 .s-process-steps .step:nth-child(3) {
   position: relative;
   top: -64px;
-}
-.s-process-steps .step.active:before {
-  background-color: #FF7F5C;
-}
-.s-process-steps .step.active h3, .s-process-steps .step.active p {
-  opacity: 1;
-  transform: scale(1);
 }
 .s-process-steps .section-text, .s-process-steps .s-posts .posts-big .post-text, .s-posts .posts-big .s-process-steps .post-text {
   min-width: 285px;
