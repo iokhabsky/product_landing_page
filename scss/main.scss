@@ -260,11 +260,34 @@ header .logo {
     z-index: 600;
 }
 
-.animation_line {
+#animation_line {
     position: absolute;
     top: 142px;
     width: 1017px;
-    height: 395px;
+    height: 402px;
+
+    // .road_way,
+    // .road_progress {
+    //     display: none;
+    //     position: relative;
+    //     z-index: 999;
+    // }
+
+    .road_progress {
+        position: relative;
+        z-index: 999;
+
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+
+        transition: stroke-dashoffset 1.2s ease;
+        opacity: 0;
+    }
+
+    .road_way {
+        position: relative;
+        z-index: 800;
+    }
 }
 
 .s-process-steps {
@@ -294,6 +317,8 @@ header .logo {
             background-color: $border_color;
             box-shadow: 0 0 0 20px #f3f3f3;
             border-radius: 7px;
+            transition: background-color, .25s ease;
+            transition-delay: 600ms;
         }
 
         &:after {
@@ -323,6 +348,10 @@ header .logo {
         &:nth-child(3) {
             position: relative;
             top: -64px;
+        }
+
+        &.active:before {
+            background-color: $red;
         }
     }
 
@@ -719,7 +748,7 @@ header .logo {
     min-height: 699px;
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 100%;
+    background-size: 100% 100%;
     background-image: url(../img/sprite/download_bg.svg);
     text-align: center;
 
@@ -976,6 +1005,7 @@ header .logo {
     a {
         display: inline-block;
         margin-right: 16px;
+        @include button_hover();
     }
 
     .icon {

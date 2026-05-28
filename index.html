@@ -142,8 +142,22 @@
                     </a>
                 </div>
                 <div class="animation">
-                    <svg class="animation_line">
+                    <!-- <svg class="animation_line">
                         <use xlink:href="img/sprite.svg#animation_line"></use>
+                    </svg> -->
+                    <svg id="animation_line" fill="none">
+                        <path class="road_way"
+                            d="M2.50012 310.297C50.5001 345.297 162.3 411.297 225.5 395.297C304.5 375.297 324 272.297 446 248.297C568 224.297 657.5 307.797 752 187.297C846.5 66.7967 892.5 -12.2033 1019.5 4.79666"
+                            stroke="#C4C4C4" stroke-width="5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+                        </path>
+                        <path class="road_progress"
+                            d="M2.50012 310.297C50.5001 345.297 162.3 411.297 225.5 395.297C304.5 375.297 324 272.297 446 248.297C568 224.297 657.5 307.797 752 187.297C846.5 66.7967 892.5 -12.2033 1019.5 4.79666"
+                            stroke="#5D5FEF" stroke-width="5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+                        </path>    
                     </svg>
                 </div>
                 <div class="s-process-steps">
@@ -790,13 +804,14 @@
                             Join Our Newsletter
                         </h5>
                         <form action="subs.php" class="subscription-form">
-                            <input type="email" name="footerEmail" required placeholder="Your email address">
+                            <input type="email" name="footerEmail" required
+                                placeholder="Your email address">
                             <button type="submit">
                                 Subscribe
                             </button>
                         </form>
                         <p class="footer-info">
-                            *  Will send you weekly updates for your better
+                            * Will send you weekly updates for your better
                             finance management.
                         </p>
                     </div>
