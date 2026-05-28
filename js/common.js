@@ -29,6 +29,13 @@ window.onload = () => {
         }, 2400);
     }
 
+    function resetLine() {
+        linePath.style.strokeDashoffset = 1000;
+        allSteps.forEach((i) => {
+            i.classList.remove("active");
+        })
+    }
+
     function showBlocks() {
         const animatedItems = document.querySelectorAll(".js-animate");
         animatedItems.forEach(item => observer.observe(item));
@@ -37,15 +44,24 @@ window.onload = () => {
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
-                if (!entry.isIntersecting) return;
+                if (entry.isIntersecting) {
 
-                if (entry.target.id === "animation_line") {
-                    animateLine();
+                    if (entry.target.id === "animation_line") {
+                        animateLine();
+                    }
+
+                    entry.target.classList.add("animated");
                 }
 
-                entry.target.classList.add("animated");
+                // EXIT (зник з viewport)
+                else {
+                    entry.target.classList.remove("animated");
 
-                observer.unobserve(entry.target);
+                    // якщо хочеш ресет для SVG:
+                    if (entry.target.id === "animation_line") {
+                        resetLine(); // якщо така функція є
+                    }
+                }
             });
         },
         {
