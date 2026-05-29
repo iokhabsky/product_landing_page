@@ -29,7 +29,8 @@ button {
   cursor: pointer;
 }
 
-input:focus, button:focus {
+input:focus,
+button:focus {
   outline: none;
 }
 
@@ -58,6 +59,7 @@ body {
 }
 
 .btn {
+  position: relative;
   display: inline-block;
   width: 100%;
   padding: 10px;
@@ -68,6 +70,10 @@ body {
   font-family: "Gilroy";
   font-weight: 600;
   text-align: center;
+  overflow: hidden;
+  background-image: linear-gradient(45deg, #ff7e5f, #feb47b, #ff7e5f);
+  background-size: 300% 300%;
+  animation: moveGradient 5s ease infinite;
   transition: all 0.25s ease;
 }
 .btn:hover {
@@ -76,7 +82,24 @@ body {
 .btn:active, .btn:focus {
   opacity: 1;
 }
+.btn:before {
+  transform: rotate(7deg) translateX(350%);
+}
+.btn:hover::before {
+  transform: rotate(25deg) translateX(350%);
+}
 
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .btn-red {
   background-color: #FF7F5C;
   color: #fff;
@@ -106,6 +129,9 @@ body {
 .logo:active, .footer-title:active, .footer-links a:active:first-child, .logo:focus, .footer-title:focus, .footer-links a:focus:first-child {
   opacity: 1;
 }
+.logo:before, .footer-title:before, .footer-links a:first-child:before {
+  transform: rotate(7deg) translateX(350%);
+}
 
 .menu a {
   display: inline-block;
@@ -120,6 +146,9 @@ body {
 }
 .menu a:active, .menu a:focus {
   opacity: 1;
+}
+.menu a:before {
+  transform: rotate(7deg) translateX(350%);
 }
 .menu a:not(:last-of-type) {
   margin-right: 38px;
@@ -707,6 +736,9 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
 .g-link:active, .g-link:focus {
   opacity: 1;
 }
+.g-link:before {
+  transform: rotate(7deg) translateX(350%);
+}
 .g-link .icon {
   width: 12px;
   height: 12px;
@@ -1267,6 +1299,9 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
 }
 .footer-web-links a:active, .footer-web-links a:focus {
   opacity: 1;
+}
+.footer-web-links a:before {
+  transform: rotate(7deg) translateX(350%);
 }
 .footer-web-links .icon {
   width: 20px;

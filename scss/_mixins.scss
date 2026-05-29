@@ -7,6 +7,9 @@
   &:focus {
     opacity: 1;
   }
+  &:before {
+    transform: rotate(7deg) translateX(350%);
+  }
 }
 
 @mixin animateInLeft() {
