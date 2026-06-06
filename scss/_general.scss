@@ -2,6 +2,18 @@
 
 html {
     font-size: 62.5%;
+
+    @media (max-width: 1440px) {
+        font-size: 60%; // 9.6px
+    }
+
+    @media (max-width: 1024px) {
+        font-size: 58.75%; // 9.4px
+    }
+
+    @media (max-width: 768px) {
+        font-size: 56.25%; // 9px
+    }
 }
 
 * {
@@ -52,6 +64,7 @@ body {
     position: relative;
     max-width: 120rem;
     margin: 0 auto;
+    padding: 0 15px;
     z-index: 200;
 }
 
@@ -207,6 +220,10 @@ body {
     font-weight: 800;
     font-size: 4rem;
     line-height: 1.2;
+
+    @include mob() {
+        font-size: 21px;
+    }
 }
 
 .section-text {
@@ -215,4 +232,19 @@ body {
     font-weight: 500;
     color: $section_text_color;
     line-height: 1.875;
+}
+
+div,
+section,
+form {
+    &.js-animate {
+        @include tab-max() {
+            opacity: 1;
+            transform: none;
+            left: auto;
+            right: auto;
+            top: auto;
+            bottom: auto;
+        }
+    }
 }

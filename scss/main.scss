@@ -25,6 +25,10 @@ header {
     padding-bottom: 42px;
     border-bottom: 1px solid rgba($border_color, .4);
     z-index: 100;
+
+    @include mob() {
+        padding-bottom: 20px;
+    }
 }
 
 header .logo {
@@ -39,21 +43,79 @@ header .logo {
     height: 888px;
     overflow: hidden;
     z-index: 50;
+
+    @include mob() {
+        width: 700px;
+        height: 600px;
+    }
 }
 
 .header-nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    .menu {
+        margin-right: 180px;
+
+        @media (max-width: ($tab - 1)) {
+            display: none;
+        }
+    }
 }
 
-.header-nav .menu {
-    margin-right: 180px;
+.header-burger {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    @media (max-width: ($tab - 1)) {
+        display: flex;
+    }
+
+    &.active {
+        span:first-child {
+            transform: rotate(45deg);
+            margin-bottom: -3px;
+        }
+        span:last-child {
+            margin-top: -3px;
+            transform: rotate(-45deg);
+        }
+        span:nth-child(2) {
+            margin: 0;
+            background-color: transparent;
+        }
+    }
+
+    span {
+        display: block;
+        height: 3px;
+        width: 30px;
+        background-color: $base_color;
+        border-radius: 3px;
+        transition: all .25s ease;
+
+        &:nth-child(2) {
+            margin: 6px 0;
+        }
+    }
 }
 
 .header-login {
     display: flex;
     align-items: center;
+
+    @media (max-width: ($tab - 1)) {
+        display: none;
+    }
+
 
     .h-btn {
         display: inline-block;
@@ -97,6 +159,9 @@ header .logo {
     margin-top: 122px;
 
     @include animateInLeft();
+    @include mob() {
+        margin-top: 35px;
+    }
 }
 
 .header-subtitle {
@@ -104,6 +169,10 @@ header .logo {
     font-weight: 600;
     font-size: 2.2rem;
     line-height: 1;
+
+    @media (max-width: $mob) {
+        font-size: 1.8rem;
+    }
 }
 
 .header-title {
@@ -113,6 +182,11 @@ header .logo {
     font-size: 6rem;
     line-height: 1.13;
     font-weight: 800;
+
+    @include mob() {
+        font-size: 24px;
+        line-height: 1;
+    }
 }
 
 .header-text {
@@ -121,6 +195,10 @@ header .logo {
     color: $header_font_color;
     font-size: 2rem;
     line-height: 1.75;
+
+    @include mob() {
+        font-size: 16px;
+    }
 }
 
 .header-form {
@@ -138,6 +216,11 @@ header .logo {
         font-weight: 700;
         line-height: 1.25;
         color: rgba(#000, .4);
+
+        @include mob() {
+            left: 15px;
+            top: 15px;
+        }
     }
 
     input {
@@ -149,6 +232,11 @@ header .logo {
         font-weight: 700;
         color: rgba(#000, .6);
         border: none;
+
+        @include mob() {
+            padding: 15px 15px 0 15px;
+            height: 90px;
+        }
     }
 
     button {
@@ -164,14 +252,15 @@ header .logo {
         font-weight: 700;
         background-color: $font_color;
         cursor: pointer;
-        transition: all .25s ease;
+        @include button_hover();
 
-        &:hover {
-            opacity: 0.7;
-        }
-
-        &:focus {
-            opacity: 1;
+        @include mob() {
+            width: 200px;
+            height: 48px;
+            position: static;
+            margin-left: 15px;
+            margin-bottom: 15px;
+            font-size: 16px;
         }
     }
 }
@@ -179,6 +268,10 @@ header .logo {
 .header-advantages {
     display: flex;
     margin-top: 53px;
+
+    @include mob() {
+        margin-top: 20px;
+    }
 
     .icon {
         width: 20px;
@@ -193,6 +286,10 @@ header .logo {
         line-height: 1.76;
         color: $header_font_color;
 
+        @include mob() {
+            font-size: 14px;
+        }
+
         &:first-of-type {
             margin-right: 30px;
         }
@@ -206,6 +303,11 @@ header .logo {
     width: 845px;
     height: 685px;
     filter: drop-shadow(0 29px 35px rgba(0, 0, 0, 0.2));
+
+    @include mob() {
+        display: none;
+        height: auto;
+    }
 }
 
 .section-title-small {
@@ -220,6 +322,9 @@ header .logo {
     border-bottom: 1px solid rgba($border_color, .4);
 
     @include animateInDown();
+    @include mob() {
+        padding: 30px 0 40px;
+    }
 }
 
 .brands {
@@ -227,12 +332,21 @@ header .logo {
     align-items: center;
     justify-content: center;
 
+    @include mob() {
+        flex-direction: column;
+    }
+
     .brand {
         width: 137px;
         height: 28px;
 
         &:not(:last-child) {
             margin-right: 49px;
+
+            @include mob() {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
         }
     }
 }
@@ -242,6 +356,11 @@ header .logo {
     padding: 100px 0 0 0;
     margin-bottom: -185px;
     overflow: hidden;
+
+    @include mob() {
+        padding: 40px 0 0 0;
+        margin-bottom: 0;
+    }
 
     &:before {
         position: absolute;
@@ -262,6 +381,9 @@ header .logo {
     z-index: 600;
 
     @include animateInLeft();
+    @include mob() {
+        width: auto;
+    }
 
     &.animated {
         ~ .s-process-steps {
@@ -284,6 +406,12 @@ header .logo {
                 }
             }
         }
+    }
+}
+
+.animation {
+    @include mob() {
+        display: none;
     }
 }
 
@@ -318,8 +446,18 @@ header .logo {
     left: 123px;
     display: flex;
 
+    @include mob() {
+        position: static;
+        flex-direction: column;
+    }
+
     .step {
         position: relative;
+
+        @include mob() {
+            display: flex;
+            flex-direction: column;
+        }
 
         h3 {
             font-weight: 800;
@@ -331,6 +469,11 @@ header .logo {
             opacity: 0;
             transform: scale(.9);
             transition: opacity, transform, 1200ms ease;
+
+            @include mob() {
+                opacity: 1;
+                transform: none;
+            }
         }
 
         &::before {
@@ -344,6 +487,10 @@ header .logo {
             box-shadow: 0 0 0 20px #f3f3f3;
             border-radius: 7px;
             transition: background-color, .25s ease;
+
+            @include mob() {
+                display: none;
+            }
         }
 
         &:after {
@@ -358,21 +505,42 @@ header .logo {
             font-size: 20rem;
             line-height: 1;
             opacity: .05;
+
+            @include mob() {
+                position: static;
+                opacity: .2;
+                font-size: 40px;
+                order: -1;
+            }
         }
 
         &:first-child {
             margin-top: 315px;
             margin-right: 187px;
+
+            @include mob() {
+                margin-top: 15px;
+                margin-right: 0;
+            }
         }
 
         &:nth-child(2) {
             margin-top: 185px;
             margin-right: 56px;
+
+            @include mob() {
+                margin-top: 15px;
+                margin-right: 0;
+            }
         }
 
         &:nth-child(3) {
             position: relative;
             top: -64px;
+
+            @include mob() {
+                top: 0;
+            }
         }
     }
 
@@ -398,6 +566,13 @@ header .logo {
     z-index: 100;
 
     @include animateInUp();
+    @include mob() {
+        width: 100%;
+        height: 260px;
+        padding: 0 15px;
+        margin-top: 30px;
+        border-radius: 0;
+    }
 
     &:before {
         position: absolute;
@@ -415,6 +590,9 @@ header .logo {
         position: absolute;
         left: 0;
         top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         z-index: 5;
     }
 
@@ -435,6 +613,11 @@ header .logo {
         line-height: 1.5;
         color: #fff;
         z-index: 11;
+
+        @include mob() {
+            margin: 8px 0 15px 0;
+            font-size: 14px;
+        }
     }
 
     .btn {
@@ -450,6 +633,12 @@ header .logo {
     padding-top: 290px;
     padding-bottom: 159px;
 
+    @include mob() {
+        padding-top: 40px;
+        padding-bottom: 20px;
+        background-color: #f5f8ff;
+    }
+
     .section-text {
         max-width: 604px;
         margin-left: auto;
@@ -463,6 +652,10 @@ header .logo {
         width: 2560px;
         height: 1113px;
         transform: translateX(-50%);
+
+        @include mob() {
+            display: none;
+        }
     }
 
     .btn-more {
@@ -477,12 +670,25 @@ header .logo {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
     margin-top: 75px;
+
+    @include mob() {
+        display: block;
+        margin-top: 25px;
+    }
 }
 
 .g-item {
     padding: 40px 30px;
     background-color: #fff;
     border-radius: 20px;
+
+    @include mob() {
+        padding: 20px 15px;
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
 
     &:nth-child(2) {
         transition-delay: 200ms;
@@ -504,6 +710,11 @@ header .logo {
     margin-top: 25px;
     font-size: 2.4rem;
     line-height: 2.5;
+
+    @include mob() {
+        margin-top: 0;
+        font-size: 19px;
+    }
 }
 
 .g-link {
@@ -522,12 +733,22 @@ header .logo {
 .s-built {
     padding: 100px 0 130px;
 
+    @include mob() {
+        padding: 30px 0 35px;
+    }
+
     .section-title {
         min-width: 360px;
         max-width: 370px;
         padding-right: 40px;
         margin-bottom: 0;
         font-size: 3.4rem;
+
+        @include mob() {
+            min-width: auto;
+            max-width: none;
+            padding-right: 0;
+        }
     }
 }
 
@@ -539,6 +760,11 @@ header .logo {
     border-radius: 20px;
 
     @include animateInUp();
+
+    @include mob() {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
 }
 
 .built-items {
@@ -546,6 +772,11 @@ header .logo {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+
+    @include mob() {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
     .icon {
         width: 40px;
@@ -555,6 +786,10 @@ header .logo {
     .item {
         display: flex;
         align-items: center;
+
+        @include mob() {
+            margin-top: 12px;
+        }
 
         span {
             display: flex;
@@ -573,11 +808,18 @@ header .logo {
             font-size: 2rem;
             line-height: 1.6;
             color: $section_text_color;
+
+            @include mob() {
+                max-width: none;
+            }
         }
 
         &:last-child {
             p {
                 max-width: 180px;
+                @include mob() {
+                    max-width: none;
+                }
             }
         }
     }
@@ -585,12 +827,20 @@ header .logo {
 
 .s-offering {
     margin-bottom: 120px;
+
+    @include mob() {
+        margin-bottom: 30px;
+    }
 }
 
 .offers {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
+    @include mob() {
+        flex-direction: column;
+    }
 }
 
 .offer {
@@ -600,6 +850,13 @@ header .logo {
     border-radius: 20px;
 
     @include animateInUp();
+    @include mob() {
+        width: 100%;
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
 
     &:nth-child(2) {
         transition-delay: 200ms;
@@ -630,9 +887,17 @@ header .logo {
 .s-testimonials {
     padding-bottom: 94px;
 
+    @include mob() {
+        padding-bottom: 35px;
+    }
+
     .review-slide {
         display: flex;
         align-items: center;
+
+        @include mob() {
+            flex-direction: column;
+        }
     }
 }
 
@@ -640,6 +905,9 @@ header .logo {
     padding: 67px 45px;
 
     @include animateInLeft();
+    @include mob() {
+        padding: 0;
+    }
 
     img {
         position: relative;
@@ -647,9 +915,21 @@ header .logo {
         height: 539px;
         z-index: 50;
         object-fit: cover;
+
+        @include mob() {
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+        }
     }
 
     .decor {
+        @include mob() {
+            display: none;
+        }
+
         .icon {
             position: absolute;
             z-index: 40;
@@ -691,16 +971,28 @@ header .logo {
     margin-right: 20px;
 
     @include animateInRight();
+    @include mob() {
+        margin-right: 0;
+    }
 
     p {
         font-size: 3rem;
         line-height: 1.36;
         font-weight: 600;
+
+        @include mob() {
+            font-size: 15px;
+        }
     }
 
     >.icon {
         width: 31px;
         height: 27px;
+
+        @include mob() {
+            width: 18px;
+            height: 18px;
+        }
     }
 
 
@@ -711,10 +1003,20 @@ header .logo {
     align-items: center;
     margin: 20px 0;
 
+    @include mob() {
+        margin: 10px 0;
+    }
+
     .icon {
         width: 28px;
         height: 28px;
         margin-right: 6px;
+
+        @include mob() {
+            width: 18px;
+            height: 18px;
+            margin-right: 3px;
+        }
     }
 }
 
@@ -724,9 +1026,17 @@ header .logo {
     justify-content: space-between;
     margin-top: 45px;
 
+    @include mob() {
+        margin-top: 15px;
+    }
+
     .icon {
         width: 137px;
         height: 28px;
+
+        @include mob() {
+            width: 95px;
+        }
     }
 }
 
@@ -738,12 +1048,20 @@ header .logo {
             font-weight: 600;
             font-size: 2rem;
             line-height: 1.5;
+
+            @include mob() {
+                font-size: 16px;
+            }
         }
 
         &:last-child {
             color: $header_font_color;
             font-size: 1.6rem;
             line-height: 1.5;
+
+            @include mob() {
+                font-size: 14px;    
+            }
         }
     }
 }
@@ -766,6 +1084,10 @@ header .logo {
         z-index: 60;
         cursor: pointer;
 
+        @include mob() {
+            top: 150px;
+        }
+
         .icon {
             width: 10px;
             height: 20px;
@@ -780,6 +1102,11 @@ header .logo {
         .custom-next {
             right: auto;
             left: 417px;
+
+            @include mob() {
+                left: auto;
+                right: 15px;
+            }
         }
     }
 }
@@ -796,6 +1123,13 @@ header .logo {
     background-position: center center;
     background-size: 100% 100%;
     background-image: url(../img/sprite/download_bg.svg);
+
+    @include mob() {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 20px;
+        min-height: auto;
+    }
 
     .section-caption-small {
         margin-bottom: 0;
@@ -840,6 +1174,9 @@ header .logo {
 
 .s-posts {
     padding: 23px 0 100px;
+    @include mob() {
+        padding: 20px 0 20px;
+    }
 
     img {
         border-radius: 10px;
@@ -851,6 +1188,13 @@ header .logo {
         justify-content: space-between;
 
         @include animateInUp();
+        @include mob() {
+            flex-direction: column;
+            align-items: flex-start;
+            opacity: 1;
+            top: auto;
+            transform: none;
+        }
     }
 
     .posts {
@@ -858,6 +1202,11 @@ header .logo {
         grid-template-columns: 2fr 1fr;
         grid-gap: 30px;
         margin-top: 56px;
+
+        @include mob() {
+            display: block;
+            margin-top: 15px;
+        }
 
         .post {
             position: relative;
@@ -901,6 +1250,10 @@ header .logo {
             line-height: 1.875;
             color: #64607D;
 
+            @include mob() {
+                margin-right: 9px;
+            }
+
             &:hover {
                 text-decoration: underline;
             }
@@ -913,9 +1266,19 @@ header .logo {
         justify-content: space-between;
 
         @include animateInLeft();
+        @include mob() {
+            flex-direction: column;
+            opacity: 1;
+            left: auto;
+            transform: none;
+        }
 
         .post {
             width: calc(50% - 15px);
+
+            @include mob() {
+                width: 100%;
+            }
         }
 
         .post-title {
@@ -933,6 +1296,11 @@ header .logo {
     .posts-small {
 
         @include animateInRight();
+        @include mob() {
+            opacity: 1;
+            right: auto;
+            transform: none;
+        }
 
         .post {
             position: relative;
@@ -961,6 +1329,10 @@ header .logo {
 
             &:not(:first-child) {
                 padding: 27px 0 27px;
+
+                @include mob() {
+                    padding: 15px 0 15px;
+                }
             }
         }
     }
@@ -969,6 +1341,10 @@ header .logo {
 .s-track-form {
     padding: 75px 0;
     background-color: $dark_blue;
+
+    @include mob() {
+        padding: 25px 0;
+    }
 
     .section-caption-small,
     .section-title,
@@ -985,6 +1361,10 @@ header .logo {
         font-weight: 800;
         font-size: 5rem;
         line-height: 1.2;
+
+        @include mob() {
+            margin-bottom: 15px;
+        }
     }
 
     .section-text {
@@ -997,12 +1377,22 @@ header .logo {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @include mob() {
+            flex-direction: column;
+        }
     }
 
     .section-description {
         max-width: 485px;
 
         @include animateInLeft();
+
+        @include mob() {
+            opacity: 1;
+            transform: none;
+            left: auto;
+        }
     }
 }
 
@@ -1013,6 +1403,11 @@ header .logo {
     flex-direction: column;
 
     @include animateInRight();
+
+    @include mob() {
+        max-width: none;
+        margin-top: 15px;
+    }
 
     input[type="email"],
     input[type="password"] {
@@ -1027,6 +1422,10 @@ header .logo {
         background-color: rgba(#F2F3F4, .2);
         border: none;
         border-radius: 5px;
+
+        @include mob() {
+            margin-bottom: 10px;
+        }
 
         &::placeholder {
             color: rgba(#BBB5E0, .2);
@@ -1043,6 +1442,10 @@ header .logo {
 .footer {
     padding: 123px 0 100px 0;
 
+    @include mob() {
+        padding: 40px 0 30px 0;
+    }
+
     .logo {
         display: inline-block;
         margin-bottom: 15px;
@@ -1052,6 +1455,14 @@ header .logo {
 .footer-columns {
     display: grid;
     grid-template-columns: 1.2fr 1fr 1fr 1.8fr;
+
+    @include mob() {
+        display: block;
+
+        .footer-column {
+            margin-bottom: 20px;
+        }
+    }
 
     .footer-column:first-child {
         padding-right: 45px;

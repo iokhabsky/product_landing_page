@@ -1,12 +1,15 @@
 @mixin button_hover() {
   transition: all .25s ease;
+
   &:hover {
     opacity: .7;
   }
+
   &:active,
   &:focus {
     opacity: 1;
   }
+
   &:before {
     transform: rotate(7deg) translateX(350%);
   }
@@ -65,5 +68,50 @@
     bottom: 0;
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+// Responsive 
+
+
+// Tablet
+@mixin mob() {
+  @media (min-width: 320px) and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin mob-lg() {
+  @media (min-width: 481px) and (max-width: 767px) {
+    @content;
+  }
+}
+@mixin tab() {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin lap() {
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+
+@mixin desk() {
+  @media (min-width: 1200px) and (max-width: 1439px) {
+    @content;
+  }
+}
+
+@mixin lg() {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin tab-max() {
+  @media (max-width: 1023px) {
+    @content;
   }
 }
