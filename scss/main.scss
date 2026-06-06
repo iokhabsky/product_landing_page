@@ -218,6 +218,7 @@ header .logo {
         color: rgba(#000, .4);
 
         @include mob() {
+            font-size: 14px;
             left: 15px;
             top: 15px;
         }
@@ -235,7 +236,8 @@ header .logo {
 
         @include mob() {
             padding: 15px 15px 0 15px;
-            height: 90px;
+            height: 70px;
+            font-size: 16px;
         }
     }
 
@@ -748,6 +750,7 @@ header .logo {
             min-width: auto;
             max-width: none;
             padding-right: 0;
+            font-size: 20px;
         }
     }
 }
@@ -763,7 +766,7 @@ header .logo {
 
     @include mob() {
         flex-direction: column;
-        padding: 15px 20px;
+        padding: 15px;
     }
 }
 
@@ -799,6 +802,11 @@ header .logo {
             height: 60px;
             border-radius: 5px;
             background-color: #E9ECF2;
+
+            @include mob() {
+                width: 40px;
+                height: 40px;
+            }
         }
 
         p {
@@ -811,6 +819,8 @@ header .logo {
 
             @include mob() {
                 max-width: none;
+                font-size: 16px;
+                padding-left: 10px;
             }
         }
 
@@ -852,6 +862,7 @@ header .logo {
     @include animateInUp();
     @include mob() {
         width: 100%;
+        padding: 15px;
 
         &:not(:last-child) {
             margin-bottom: 15px;
@@ -868,6 +879,10 @@ header .logo {
     margin: 0 auto;
     font-size: 3.8rem;
     line-height: 1.31;
+
+    @include mob() {
+        font-size: 21px;
+    }
 }
 
 .offer-text {
@@ -877,6 +892,11 @@ header .logo {
     font-size: 1.6rem;
     line-height: 1.875;
     color: $section_text_color;
+
+    @include mob() {
+        margin: 10px auto 15px auto;
+        font-size: 14px;
+    }
 }
 
 .swiper {
@@ -1129,6 +1149,7 @@ header .logo {
         padding-right: 15px;
         padding-top: 20px;
         min-height: auto;
+        margin-bottom: 30px;
     }
 
     .section-caption-small {
@@ -1138,11 +1159,20 @@ header .logo {
     .section-title {
         max-width: 700px;
         margin: 20px 0 23px;
+
+        @include mob() {
+            margin: 10px 0;
+        }
     }
 
     .section-text {
         font-size: 2rem;
         margin-bottom: 29px;
+
+        @include mob() {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
     }
 
     .download-buttons {
@@ -1252,6 +1282,7 @@ header .logo {
 
             @include mob() {
                 margin-right: 9px;
+                font-size: 14px;
             }
 
             &:hover {
@@ -1284,12 +1315,21 @@ header .logo {
         .post-title {
             font-size: 2rem;
             line-height: 1.8;
+
+            @include mob() {
+                font-size: 16px;
+                line-height: 24px;
+            }
         }
 
         .post-text {
             margin-top: 8px;
             letter-spacing: -.5px;
-            @extend .section-text
+            @extend .section-text;
+
+            @include mob() {
+                font-size: 14px;
+            }
         }
     }
 
@@ -1321,6 +1361,17 @@ header .logo {
                 margin-top: 0;
                 font-size: 1.8rem;
                 line-height: 1.36;
+
+
+                @include mob() {
+                    font-size: 15px;
+
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
             }
 
             &:first-child {
@@ -1363,6 +1414,7 @@ header .logo {
         line-height: 1.2;
 
         @include mob() {
+            font-size: 25px;
             margin-bottom: 15px;
         }
     }
@@ -1371,6 +1423,10 @@ header .logo {
         margin-bottom: 0;
         font-size: 2rem;
         line-height: 1.5;
+
+        @include mob() {
+            font-size: 16px;
+        }
     }
 
     .section-content {
@@ -1424,6 +1480,10 @@ header .logo {
         border-radius: 5px;
 
         @include mob() {
+            height: 45px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 14px;
             margin-bottom: 10px;
         }
 
@@ -1436,6 +1496,10 @@ header .logo {
         height: 60px;
         max-width: none;
         border-radius: 5px;
+
+        @include mob() {
+            height: 45px;
+        }
     }
 }
 
@@ -1529,6 +1593,11 @@ header .logo {
 
     margin: 10px 0 21px 0;
 
+    @include mob() {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
     input {
         height: 52px;
         padding-left: 15px;
@@ -1540,6 +1609,10 @@ header .logo {
         color: rgba($dark_blue, .7);
         border: none;
         outline: none;
+
+        @include mob() {
+            max-width: 180px;
+        }
 
         &::placeholder {
             font-family: "Manrope";
@@ -1571,4 +1644,9 @@ header .logo {
     margin-top: 60px;
     font-weight: 500;
     border-top: 2px solid rgba($border_color, .4);
+
+    @include mob() {
+        padding-top: 30px;
+        margin-top: 20px;
+    }
 }
