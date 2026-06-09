@@ -26,7 +26,7 @@ header {
     border-bottom: 1px solid rgba($border_color, .4);
     z-index: 100;
 
-    @include mob() {
+    @include mob-max() {
         padding-bottom: 20px;
     }
 }
@@ -44,7 +44,7 @@ header .logo {
     overflow: hidden;
     z-index: 50;
 
-    @include mob() {
+    @include mob-max() {
         width: 700px;
         height: 600px;
     }
@@ -58,7 +58,7 @@ header .logo {
     .menu {
         margin-right: 180px;
 
-        @media (max-width: ($tab - 1)) {
+        @include tab-max() {
             display: none;
         }
     }
@@ -75,7 +75,7 @@ header .logo {
     border-radius: 5px;
     cursor: pointer;
 
-    @media (max-width: ($tab - 1)) {
+    @include tab-max() {
         display: flex;
     }
 
@@ -112,7 +112,7 @@ header .logo {
     display: flex;
     align-items: center;
 
-    @media (max-width: ($tab - 1)) {
+    @include tab-max(){
         display: none;
     }
 
@@ -159,8 +159,14 @@ header .logo {
     margin-top: 122px;
 
     @include animateInLeft();
-    @include mob() {
+    @include mob-max() {
         margin-top: 35px;
+    }
+    @include mob-lg {
+        margin-top: 50px;
+    }
+    @include tab() {
+        margin-top: 90px;
     }
 }
 
@@ -170,8 +176,11 @@ header .logo {
     font-size: 2.2rem;
     line-height: 1;
 
-    @media (max-width: $mob) {
+    @include mob-max() {
         font-size: 1.8rem;
+    }
+    @include tab() {
+        font-size: 2rem;
     }
 }
 
@@ -183,9 +192,17 @@ header .logo {
     line-height: 1.13;
     font-weight: 800;
 
-    @include mob() {
+    @include mob-max() {
         font-size: 24px;
         line-height: 1;
+    }
+
+    @include mob-lg {
+        font-size: 32px;
+    }
+
+    @include tab {
+        font-size: 44px;
     }
 }
 
@@ -196,8 +213,12 @@ header .logo {
     font-size: 2rem;
     line-height: 1.75;
 
-    @include mob() {
+    @include mob-max() {
         font-size: 16px;
+    }
+
+    @include tab() {
+        font-size: 1.8rem;
     }
 }
 
@@ -217,7 +238,7 @@ header .logo {
         line-height: 1.25;
         color: rgba(#000, .4);
 
-        @include mob() {
+        @include mob-max() {
             font-size: 14px;
             left: 15px;
             top: 15px;
@@ -234,7 +255,7 @@ header .logo {
         color: rgba(#000, .6);
         border: none;
 
-        @include mob() {
+        @include mob-max() {
             padding: 15px 15px 0 15px;
             height: 70px;
             font-size: 16px;
@@ -264,6 +285,14 @@ header .logo {
             margin-bottom: 15px;
             font-size: 16px;
         }
+
+        @include mob-lg {
+            right: 15px;
+            top: 11px;
+            width: 200px;
+            height: 48px;
+            font-size: 16px;
+        }
     }
 }
 
@@ -271,8 +300,12 @@ header .logo {
     display: flex;
     margin-top: 53px;
 
-    @include mob() {
+    @include mob-max() {
         margin-top: 20px;
+    }
+
+    @include tab() {
+        margin-top: 30px;
     }
 
     .icon {
@@ -288,8 +321,12 @@ header .logo {
         line-height: 1.76;
         color: $header_font_color;
 
-        @include mob() {
+        @include mob-max() {
             font-size: 14px;
+        }
+
+        @include mob-lg() {
+            font-size: 15px;
         }
 
         &:first-of-type {
@@ -306,7 +343,7 @@ header .logo {
     height: 685px;
     filter: drop-shadow(0 29px 35px rgba(0, 0, 0, 0.2));
 
-    @include mob() {
+    @include mob-max() {
         display: none;
         height: auto;
     }
@@ -317,6 +354,14 @@ header .logo {
     font-family: "Gilroy";
     font-weight: 600;
     font-size: 2.2rem;
+
+    @include mob-max() {
+        margin-bottom: 20px;
+    }
+
+    @include tab() {
+        margin-bottom: 30px;
+    }
 }
 
 .s-brands {
@@ -324,8 +369,12 @@ header .logo {
     border-bottom: 1px solid rgba($border_color, .4);
 
     @include animateInDown();
-    @include mob() {
+
+    @include mob-max() {
         padding: 30px 0 40px;
+    }
+    @include tab() {
+        padding: 45px 0;
     }
 }
 
@@ -333,6 +382,8 @@ header .logo {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 15px;
 
     @include mob() {
         flex-direction: column;
@@ -342,11 +393,24 @@ header .logo {
         width: 137px;
         height: 28px;
 
+        @include mob-lg {
+            margin-right: 15px;
+            margin-bottom: 15px;
+        }
+
+        @include tab() {
+            margin-bottom: 15px;
+        }
+
         &:not(:last-child) {
             margin-right: 49px;
 
             @include mob() {
                 margin-right: 0;
+                margin-bottom: 15px;
+            }
+            @include mob-lg {
+                margin-right: 15px;
                 margin-bottom: 15px;
             }
         }
@@ -359,8 +423,13 @@ header .logo {
     margin-bottom: -185px;
     overflow: hidden;
 
-    @include mob() {
+    @include mob-max() {
         padding: 40px 0 0 0;
+        margin-bottom: 0;
+    }
+
+    @include tab() {
+        padding-top: 60px;
         margin-bottom: 0;
     }
 
@@ -383,7 +452,7 @@ header .logo {
     z-index: 600;
 
     @include animateInLeft();
-    @include mob() {
+    @include mob-max() {
         width: auto;
     }
 
@@ -412,7 +481,7 @@ header .logo {
 }
 
 .animation {
-    @include mob() {
+    @include tab-max() {
         display: none;
     }
 }
@@ -448,17 +517,27 @@ header .logo {
     left: 123px;
     display: flex;
 
-    @include mob() {
+    @include mob-max() {
         position: static;
         flex-direction: column;
+    }
+
+    @include tab-max() {
+        position: static;
+        justify-content: space-around;
+        margin-top: 28px;
     }
 
     .step {
         position: relative;
 
-        @include mob() {
+        @include mob-max() {
             display: flex;
             flex-direction: column;
+        }
+
+        @include tab() {
+            max-width: 230px;
         }
 
         h3 {
@@ -472,7 +551,7 @@ header .logo {
             transform: scale(.9);
             transition: opacity, transform, 1200ms ease;
 
-            @include mob() {
+            @include tab-max() {
                 opacity: 1;
                 transform: none;
             }
@@ -490,7 +569,7 @@ header .logo {
             border-radius: 7px;
             transition: background-color, .25s ease;
 
-            @include mob() {
+            @include tab-max() {
                 display: none;
             }
         }
@@ -508,7 +587,7 @@ header .logo {
             line-height: 1;
             opacity: .05;
 
-            @include mob() {
+            @include mob-max() {
                 position: static;
                 opacity: .2;
                 font-size: 40px;
@@ -520,8 +599,13 @@ header .logo {
             margin-top: 315px;
             margin-right: 187px;
 
-            @include mob() {
+            @include mob-max() {
                 margin-top: 15px;
+                margin-right: 0;
+            }
+
+            @include tab() {
+                margin-top: 0;
                 margin-right: 0;
             }
         }
@@ -530,8 +614,12 @@ header .logo {
             margin-top: 185px;
             margin-right: 56px;
 
-            @include mob() {
+            @include mob-max() {
                 margin-top: 15px;
+                margin-right: 0;
+            }
+            @include tab() {
+                margin-top: 0;
                 margin-right: 0;
             }
         }
@@ -540,7 +628,7 @@ header .logo {
             position: relative;
             top: -64px;
 
-            @include mob() {
+            @include tab-max() {
                 top: 0;
             }
         }
@@ -549,6 +637,11 @@ header .logo {
     .section-text {
         min-width: 285px;
         max-width: 285px;
+
+        @include tab() {
+            max-width: 230px;
+            min-width: 230px;
+        }
     }
 }
 
@@ -568,11 +661,18 @@ header .logo {
     z-index: 100;
 
     @include animateInUp();
-    @include mob() {
+    @include mob-max() {
         width: 100%;
         height: 260px;
         padding: 0 15px;
         margin-top: 30px;
+        border-radius: 0;
+    }
+    @include tab(){
+        width: 100%;
+        max-width: 830px;
+        height: 300px;
+        margin-top: 40px;
         border-radius: 0;
     }
 
@@ -616,9 +716,13 @@ header .logo {
         color: #fff;
         z-index: 11;
 
-        @include mob() {
+        @include mob-max() {
             margin: 8px 0 15px 0;
             font-size: 14px;
+        }
+
+        @include tab(){
+            font-size: 16px;
         }
     }
 
@@ -635,10 +739,20 @@ header .logo {
     padding-top: 290px;
     padding-bottom: 159px;
 
-    @include mob() {
+    @include mob-max() {
         padding-top: 40px;
         padding-bottom: 20px;
         background-color: #f5f8ff;
+    }
+
+    @include tab-max() {
+        min-height: auto;
+    }
+
+    @include tab() {
+        min-height: auto;
+        padding-top: 115px;
+        padding-bottom: 55px;
     }
 
     .section-text {
@@ -655,7 +769,7 @@ header .logo {
         height: 1113px;
         transform: translateX(-50%);
 
-        @include mob() {
+        @include mob-max() {
             display: none;
         }
     }
@@ -673,9 +787,14 @@ header .logo {
     grid-gap: 30px;
     margin-top: 75px;
 
-    @include mob() {
+    @include mob-max() {
         display: block;
         margin-top: 25px;
+    }
+
+    @include tab() {
+        margin-top: 45px;
+        grid-gap: 15px;
     }
 }
 
@@ -684,12 +803,16 @@ header .logo {
     background-color: #fff;
     border-radius: 20px;
 
-    @include mob() {
+    @include mob-max() {
         padding: 20px 15px;
 
         &:not(:last-child) {
             margin-bottom: 15px;
         }
+    }
+
+    @include tab() {
+        padding: 20px 15px;
     }
 
     &:nth-child(2) {
@@ -713,9 +836,14 @@ header .logo {
     font-size: 2.4rem;
     line-height: 2.5;
 
-    @include mob() {
+    @include mob-max() {
         margin-top: 0;
         font-size: 19px;
+    }
+
+    @include tab(){
+        font-size: 2rem;
+        line-height: 1.5;
     }
 }
 
@@ -735,8 +863,12 @@ header .logo {
 .s-built {
     padding: 100px 0 130px;
 
-    @include mob() {
+    @include mob-max() {
         padding: 30px 0 35px;
+    }
+
+    @include tab(){
+        padding: 45px 0 55px;
     }
 
     .section-title {
@@ -746,11 +878,19 @@ header .logo {
         margin-bottom: 0;
         font-size: 3.4rem;
 
-        @include mob() {
+        @include mob-max() {
             min-width: auto;
             max-width: none;
             padding-right: 0;
             font-size: 20px;
+        }
+
+        @include tab(){
+            width: 100%;
+            max-width: 100%;
+            text-align: center;
+            padding-right: 0;
+            font-size: 23px;
         }
     }
 }
@@ -764,8 +904,15 @@ header .logo {
 
     @include animateInUp();
 
-    @include mob() {
+    @include mob-max() {
         flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    @include tab() {
+        flex-direction: column;
+        align-items: flex-start;
         padding: 15px;
     }
 }
@@ -776,9 +923,13 @@ header .logo {
     justify-content: space-between;
     width: 100%;
 
-    @include mob() {
+    @include mob-max() {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    @include tab(){
+        margin-top: 15px;
     }
 
     .icon {
@@ -790,7 +941,7 @@ header .logo {
         display: flex;
         align-items: center;
 
-        @include mob() {
+        @include mob-max() {
             margin-top: 12px;
         }
 
@@ -803,7 +954,7 @@ header .logo {
             border-radius: 5px;
             background-color: #E9ECF2;
 
-            @include mob() {
+            @include tab-max() {
                 width: 40px;
                 height: 40px;
             }
@@ -817,9 +968,10 @@ header .logo {
             line-height: 1.6;
             color: $section_text_color;
 
-            @include mob() {
+            @include tab-max() {
                 max-width: none;
                 font-size: 16px;
+                line-height: 1.2;
                 padding-left: 10px;
             }
         }
@@ -827,7 +979,7 @@ header .logo {
         &:last-child {
             p {
                 max-width: 180px;
-                @include mob() {
+                @include mob-max() {
                     max-width: none;
                 }
             }
@@ -838,8 +990,12 @@ header .logo {
 .s-offering {
     margin-bottom: 120px;
 
-    @include mob() {
+    @include mob-max() {
         margin-bottom: 30px;
+    }
+
+    @include tab() {
+        margin-bottom: 60px;
     }
 }
 
@@ -848,7 +1004,7 @@ header .logo {
     align-items: flex-start;
     justify-content: space-between;
 
-    @include mob() {
+    @include mob-max() {
         flex-direction: column;
     }
 }
@@ -860,13 +1016,18 @@ header .logo {
     border-radius: 20px;
 
     @include animateInUp();
-    @include mob() {
+    @include mob-max() {
         width: 100%;
         padding: 15px;
 
         &:not(:last-child) {
             margin-bottom: 15px;
         }
+    }
+
+    @include tab() {
+        width: calc(50% - 8.5px);
+        padding: 20px;
     }
 
     &:nth-child(2) {
@@ -880,8 +1041,12 @@ header .logo {
     font-size: 3.8rem;
     line-height: 1.31;
 
-    @include mob() {
+    @include mob-max() {
         font-size: 21px;
+    }
+
+    @include tab() {
+        font-size: 24px;
     }
 }
 
@@ -893,9 +1058,14 @@ header .logo {
     line-height: 1.875;
     color: $section_text_color;
 
-    @include mob() {
+    @include mob-max() {
         margin: 10px auto 15px auto;
         font-size: 14px;
+    }
+
+    @include tab() {
+        margin: 15px auto;
+        font-size: 15px;
     }
 }
 
@@ -907,15 +1077,19 @@ header .logo {
 .s-testimonials {
     padding-bottom: 94px;
 
-    @include mob() {
+    @include mob-max() {
         padding-bottom: 35px;
+    }
+
+    @include tab() {
+        padding-bottom: 45px;
     }
 
     .review-slide {
         display: flex;
         align-items: center;
 
-        @include mob() {
+        @include mob-max() {
             flex-direction: column;
         }
     }
@@ -925,7 +1099,7 @@ header .logo {
     padding: 67px 45px;
 
     @include animateInLeft();
-    @include mob() {
+    @include tab-max() {
         padding: 0;
     }
 
@@ -936,17 +1110,22 @@ header .logo {
         z-index: 50;
         object-fit: cover;
 
-        @include mob() {
+        @include mob-max() {
             width: auto;
             max-width: 100%;
             height: auto;
             max-height: 250px;
-            object-fit: cover;
+        }
+
+        @include tab(){
+            height: 400px;
+            width: 300px;
+            min-width: 300px;
         }
     }
 
     .decor {
-        @include mob() {
+        @include tab-max() {
             display: none;
         }
 
@@ -991,8 +1170,12 @@ header .logo {
     margin-right: 20px;
 
     @include animateInRight();
-    @include mob() {
-        margin-right: 0;
+    @include tab-max() {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @include tab() {
+        padding-left: 15px;
     }
 
     p {
@@ -1000,8 +1183,12 @@ header .logo {
         line-height: 1.36;
         font-weight: 600;
 
-        @include mob() {
+        @include mob-max() {
             font-size: 15px;
+        }
+
+        @include tab() {
+            font-size: 2rem;
         }
     }
 
@@ -1009,9 +1196,14 @@ header .logo {
         width: 31px;
         height: 27px;
 
-        @include mob() {
+        @include mob-max() {
             width: 18px;
             height: 18px;
+        }
+
+        @include tab() {
+            width: 24px;
+            height: 24px;
         }
     }
 
@@ -1023,8 +1215,11 @@ header .logo {
     align-items: center;
     margin: 20px 0;
 
-    @include mob() {
+    @include mob-max() {
         margin: 10px 0;
+    }
+    @include tab() {
+        margin: 15px 0;
     }
 
     .icon {
@@ -1032,10 +1227,15 @@ header .logo {
         height: 28px;
         margin-right: 6px;
 
-        @include mob() {
+        @include mob-max() {
             width: 18px;
             height: 18px;
             margin-right: 3px;
+        }
+
+        @include tab() {
+            width: 22px;
+            height: 22px;
         }
     }
 }
@@ -1046,15 +1246,19 @@ header .logo {
     justify-content: space-between;
     margin-top: 45px;
 
-    @include mob() {
+    @include mob-max() {
         margin-top: 15px;
+    }
+
+    @include tab() {
+        margin-top: 25px;
     }
 
     .icon {
         width: 137px;
         height: 28px;
 
-        @include mob() {
+        @include mob-max() {
             width: 95px;
         }
     }
@@ -1069,7 +1273,7 @@ header .logo {
             font-size: 2rem;
             line-height: 1.5;
 
-            @include mob() {
+            @include mob-max() {
                 font-size: 16px;
             }
         }
@@ -1079,7 +1283,7 @@ header .logo {
             font-size: 1.6rem;
             line-height: 1.5;
 
-            @include mob() {
+            @include mob-max() {
                 font-size: 14px;    
             }
         }
@@ -1104,7 +1308,7 @@ header .logo {
         z-index: 60;
         cursor: pointer;
 
-        @include mob() {
+        @include mob-max() {
             top: 150px;
         }
 
@@ -1123,9 +1327,13 @@ header .logo {
             right: auto;
             left: 417px;
 
-            @include mob() {
+            @include mob-max() {
                 left: auto;
                 right: 15px;
+            }
+
+            @include tab() {
+                left: 225px;
             }
         }
     }
@@ -1144,12 +1352,17 @@ header .logo {
     background-size: 100% 100%;
     background-image: url(../img/sprite/download_bg.svg);
 
-    @include mob() {
+    @include mob-max() {
         padding-left: 15px;
         padding-right: 15px;
         padding-top: 20px;
         min-height: auto;
         margin-bottom: 30px;
+    }
+
+    @include tab() {
+        min-height: 500px;
+        padding-top: 110px;
     }
 
     .section-caption-small {
@@ -1160,7 +1373,7 @@ header .logo {
         max-width: 700px;
         margin: 20px 0 23px;
 
-        @include mob() {
+        @include mob-max() {
             margin: 10px 0;
         }
     }
@@ -1169,7 +1382,7 @@ header .logo {
         font-size: 2rem;
         margin-bottom: 29px;
 
-        @include mob() {
+        @include tab-max() {
             font-size: 16px;
             margin-bottom: 15px;
         }
@@ -1204,7 +1417,8 @@ header .logo {
 
 .s-posts {
     padding: 23px 0 100px;
-    @include mob() {
+
+    @include tab-max() {
         padding: 20px 0 20px;
     }
 
@@ -1221,6 +1435,8 @@ header .logo {
         @include mob() {
             flex-direction: column;
             align-items: flex-start;
+        }
+        @include tab-max() {
             opacity: 1;
             top: auto;
             transform: none;
@@ -1233,8 +1449,13 @@ header .logo {
         grid-gap: 30px;
         margin-top: 56px;
 
-        @include mob() {
+        @include mob-max() {
             display: block;
+            margin-top: 15px;
+        }
+
+        @include tab() {
+            grid-gap: 15px;
             margin-top: 15px;
         }
 
@@ -1271,6 +1492,10 @@ header .logo {
         z-index: 33;
         margin-top: 14px;
 
+        @include tab() {
+            margin-top: 8px;
+        }
+
         a {
             display: inline-block;
             margin-right: 20px;
@@ -1280,7 +1505,7 @@ header .logo {
             line-height: 1.875;
             color: #64607D;
 
-            @include mob() {
+            @include tab-max() {
                 margin-right: 9px;
                 font-size: 14px;
             }
@@ -1297,8 +1522,12 @@ header .logo {
         justify-content: space-between;
 
         @include animateInLeft();
+
         @include mob() {
             flex-direction: column;
+        }
+
+        @include tab-max() {
             opacity: 1;
             left: auto;
             transform: none;
@@ -1310,15 +1539,27 @@ header .logo {
             @include mob() {
                 width: 100%;
             }
+
+            @include mob-lg() {
+                width: calc(50% - 8.5px);
+            }
+
+            @include tab() {
+                width: calc(50% - 8.5px);
+            }
         }
 
         .post-title {
             font-size: 2rem;
             line-height: 1.8;
 
-            @include mob() {
+            @include tab-max() {
                 font-size: 16px;
                 line-height: 24px;
+            }
+
+            @include tab() {
+                margin-top: 0;
             }
         }
 
@@ -1327,8 +1568,12 @@ header .logo {
             letter-spacing: -.5px;
             @extend .section-text;
 
-            @include mob() {
+            @include mob-max() {
                 font-size: 14px;
+            }
+
+            @include tab() {
+                margin-top: 3px;
             }
         }
     }
@@ -1336,7 +1581,7 @@ header .logo {
     .posts-small {
 
         @include animateInRight();
-        @include mob() {
+        @include tab-max() {
             opacity: 1;
             right: auto;
             transform: none;
@@ -1351,6 +1596,11 @@ header .logo {
             img {
                 width: 110px;
                 margin-right: 16px;
+
+                @include tab() {
+                    width: 75px;
+                    margin-right: 8.5px;
+                }
             }
 
             .post-category {
@@ -1363,7 +1613,7 @@ header .logo {
                 line-height: 1.36;
 
 
-                @include mob() {
+                @include tab-max() {
                     font-size: 15px;
 
                     text-overflow: ellipsis;
@@ -1376,12 +1626,16 @@ header .logo {
 
             &:first-child {
                 padding-bottom: 27px;
+
+                @include tab-max() {
+                    padding-bottom: 15px;
+                }
             }
 
             &:not(:first-child) {
                 padding: 27px 0 27px;
 
-                @include mob() {
+                @include tab-max() {
                     padding: 15px 0 15px;
                 }
             }
@@ -1393,8 +1647,12 @@ header .logo {
     padding: 75px 0;
     background-color: $dark_blue;
 
-    @include mob() {
+    @include mob-max() {
         padding: 25px 0;
+    }
+
+    @include tab(){
+        padding: 45px 0;
     }
 
     .section-caption-small,
@@ -1413,9 +1671,14 @@ header .logo {
         font-size: 5rem;
         line-height: 1.2;
 
-        @include mob() {
+        @include mob-max() {
             font-size: 25px;
             margin-bottom: 15px;
+        }
+
+        @include tab() {
+            font-size: 32px;
+            margin-bottom: 20px;
         }
     }
 
@@ -1424,7 +1687,7 @@ header .logo {
         font-size: 2rem;
         line-height: 1.5;
 
-        @include mob() {
+        @include tab-max() {
             font-size: 16px;
         }
     }
@@ -1437,14 +1700,17 @@ header .logo {
         @include mob() {
             flex-direction: column;
         }
+        @include mob-lg {
+
+        }
     }
 
     .section-description {
         max-width: 485px;
 
         @include animateInLeft();
-
-        @include mob() {
+        @include tab-max() {
+            padding-right: 15px;
             opacity: 1;
             transform: none;
             left: auto;
@@ -1460,9 +1726,13 @@ header .logo {
 
     @include animateInRight();
 
-    @include mob() {
+    @include mob-max() {
         max-width: none;
         margin-top: 15px;
+    }
+
+    @include tab() {
+        max-width: 320px;
     }
 
     input[type="email"],
@@ -1479,7 +1749,7 @@ header .logo {
         border: none;
         border-radius: 5px;
 
-        @include mob() {
+        @include tab-max() {
             height: 45px;
             padding-left: 15px;
             padding-right: 15px;
@@ -1497,8 +1767,9 @@ header .logo {
         max-width: none;
         border-radius: 5px;
 
-        @include mob() {
+        @include tab-max() {
             height: 45px;
+            font-size: 14px;
         }
     }
 }
@@ -1506,8 +1777,12 @@ header .logo {
 .footer {
     padding: 123px 0 100px 0;
 
-    @include mob() {
+    @include mob-max() {
         padding: 40px 0 30px 0;
+    }
+
+    @include tab() {
+        padding: 60px 0 40px;
     }
 
     .logo {
@@ -1528,8 +1803,21 @@ header .logo {
         }
     }
 
+    @include mob-lg(){
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .footer-column:last-child {
+            margin-top: 30px;
+            grid-column: 1 / -1;
+        }
+    }
+
     .footer-column:first-child {
         padding-right: 45px;
+
+        @include tab() {
+            padding-right: 0;
+        }
     }
 }
 
@@ -1593,7 +1881,7 @@ header .logo {
 
     margin: 10px 0 21px 0;
 
-    @include mob() {
+    @include mob-max() {
         margin-top: 0;
         margin-bottom: 10px;
     }
@@ -1610,7 +1898,8 @@ header .logo {
         border: none;
         outline: none;
 
-        @include mob() {
+        @include mob-max() {
+            height: 45px;
             max-width: 180px;
         }
 
@@ -1629,6 +1918,9 @@ header .logo {
         background-color: #00E1F0;
         color: #fff;
 
+        @include mob-max() {
+            height: 45px;
+        }
         &:hover {
             background-color: #1ca8b1;
         }
@@ -1645,7 +1937,7 @@ header .logo {
     font-weight: 500;
     border-top: 2px solid rgba($border_color, .4);
 
-    @include mob() {
+    @include tab-max() {
         padding-top: 30px;
         margin-top: 20px;
     }

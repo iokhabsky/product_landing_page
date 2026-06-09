@@ -1,17 +1,17 @@
 @import './mixins';
 
 html {
-    font-size: 62.5%;
+    font-size: 62.5%; // 1 rem = 10px
 
-    @media (max-width: 1440px) {
+    @media (max-width: 1439px) {
         font-size: 60%; // 9.6px
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1023px) {
         font-size: 58.75%; // 9.4px
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         font-size: 56.25%; // 9px
     }
 }
@@ -221,8 +221,12 @@ body {
     font-size: 4rem;
     line-height: 1.2;
 
-    @include mob() {
+    @include mob-max() {
         font-size: 21px;
+    }
+
+    @include tab() {
+        font-size: 3rem;
     }
 }
 
