@@ -180,6 +180,7 @@ body {
 }
 
 .section-caption-small {
+  display: block;
   margin-bottom: 15px;
   font-family: "Gilroy";
   font-size: 1.4rem;
@@ -443,6 +444,11 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
     margin-top: 90px;
   }
 }
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .header-content {
+    margin-top: 100px;
+  }
+}
 
 .header-subtitle {
   font-family: "Gilroy";
@@ -483,6 +489,11 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
 @media (min-width: 768px) and (max-width: 1023px) {
   .header-title {
     font-size: 44px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .header-title {
+    font-size: 50px;
   }
 }
 
@@ -636,10 +647,15 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
   height: 685px;
   filter: drop-shadow(0 29px 35px rgba(0, 0, 0, 0.2));
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .header-dashboard {
     display: none;
-    height: auto;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .header-dashboard {
+    width: 600px;
+    height: 500px;
   }
 }
 
@@ -684,6 +700,11 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
     padding: 45px 0;
   }
 }
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .s-brands {
+    padding: 50px 0;
+  }
+}
 
 .brands {
   display: flex;
@@ -703,13 +724,17 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
 }
 @media (min-width: 481px) and (max-width: 767px) {
   .brands .brand {
-    margin-right: 15px;
-    margin-bottom: 15px;
+    margin: 0 7.5px 7.5px 7.5px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .brands .brand {
-    margin-bottom: 15px;
+    margin: 0 7.5px 7.5px 7.5px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .brands .brand {
+    margin: 0 7.5px 7.5px 7.5px;
   }
 }
 .brands .brand:not(:last-child) {
@@ -717,14 +742,23 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
 }
 @media (min-width: 320px) and (max-width: 480px) {
   .brands .brand:not(:last-child) {
-    margin-right: 0;
     margin-bottom: 15px;
+    margin-right: 0;
   }
 }
 @media (min-width: 481px) and (max-width: 767px) {
   .brands .brand:not(:last-child) {
-    margin-right: 15px;
-    margin-bottom: 15px;
+    margin-right: 7.5px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .brands .brand:not(:last-child) {
+    margin: 0 7.5px 7.5px 7.5px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .brands .brand:not(:last-child) {
+    margin: 0 7.5px 7.5px 7.5px;
   }
 }
 

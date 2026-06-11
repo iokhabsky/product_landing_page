@@ -168,6 +168,9 @@ header .logo {
     @include tab() {
         margin-top: 90px;
     }
+    @include lap() {
+        margin-top: 100px;
+    }
 }
 
 .header-subtitle {
@@ -203,6 +206,10 @@ header .logo {
 
     @include tab {
         font-size: 44px;
+    }
+
+    @include lap() {
+        font-size: 50px;
     }
 }
 
@@ -343,9 +350,13 @@ header .logo {
     height: 685px;
     filter: drop-shadow(0 29px 35px rgba(0, 0, 0, 0.2));
 
-    @include mob-max() {
+    @include tab-max() {
         display: none;
-        height: auto;
+    }
+
+    @include lap() {
+        width: 600px;
+        height: 500px;
     }
 }
 
@@ -376,6 +387,10 @@ header .logo {
     @include tab() {
         padding: 45px 0;
     }
+
+    @include lap() {
+        padding: 50px 0;
+    }
 }
 
 .brands {
@@ -394,24 +409,34 @@ header .logo {
         height: 28px;
 
         @include mob-lg {
-            margin-right: 15px;
-            margin-bottom: 15px;
+            margin: 0 7.5px 7.5px 7.5px;
         }
 
         @include tab() {
-            margin-bottom: 15px;
+            margin: 0 7.5px 7.5px 7.5px;
+        }
+
+        @include lap() {
+            margin: 0 7.5px 7.5px 7.5px;
         }
 
         &:not(:last-child) {
             margin-right: 49px;
 
             @include mob() {
+                margin-bottom: 15px;
                 margin-right: 0;
-                margin-bottom: 15px;
             }
-            @include mob-lg {
-                margin-right: 15px;
-                margin-bottom: 15px;
+
+            @include mob-lg() {
+                margin-right: 7.5px;
+            }
+
+            @include tab() {
+                margin: 0 7.5px 7.5px 7.5px;
+            }
+            @include lap() {
+                margin: 0 7.5px 7.5px 7.5px;
             }
         }
     }
