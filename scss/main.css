@@ -303,7 +303,7 @@ header {
   }
 }
 
-section {
+section:not(.s-offering) {
   overflow: hidden;
 }
 
@@ -1426,7 +1426,6 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
 
 .s-offering {
   margin-bottom: 120px;
-  overflow: visible;
 }
 @media (max-width: 767px) {
   .s-offering {

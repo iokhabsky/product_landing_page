@@ -31,7 +31,7 @@ header {
     }
 }
 
-section {
+section:not(.s-offering) {
     overflow: hidden;
 }
 
@@ -1064,7 +1064,6 @@ header .logo {
 
 .s-offering {
     margin-bottom: 120px;
-    overflow: visible;
 
     @include mob-max() {
         margin-bottom: 30px;
