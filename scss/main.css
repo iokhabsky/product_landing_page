@@ -1560,17 +1560,8 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
 }
 
 .review-img {
-  padding: 67px 45px;
   position: relative;
-  left: -100px;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity, transform, left, 1200ms ease;
-}
-.review-img.animated {
-  left: 0;
-  opacity: 1;
-  transform: scale(1);
+  padding: 67px 45px;
 }
 @media (max-width: 1023px) {
   .review-img {
@@ -1638,16 +1629,6 @@ header .logo, header .footer-title, header .footer-links a:first-child, .footer-
   max-width: 554px;
   margin-left: auto;
   margin-right: 20px;
-  position: relative;
-  right: -100px;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity, transform, left, 1200ms ease;
-}
-.review-text.animated {
-  right: 0;
-  opacity: 1;
-  transform: scale(1);
 }
 @media (max-width: 1023px) {
   .review-text {
