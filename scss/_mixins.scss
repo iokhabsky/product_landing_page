@@ -43,6 +43,17 @@
   }
 }
 
+@mixin animateFadeIn() {
+  transform: scale(.9);
+  opacity: 0;
+  transition: opacity, transform, 1200ms ease;
+
+  &.animated {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @mixin animateInUp() {
   position: relative;
   top: -100px;
@@ -103,7 +114,13 @@
 }
 
 @mixin lap() {
-  @media (min-width: 1024px) and (max-width: 1199px) {
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin lap-lg() {
+  @media (min-width: 1201px) and (max-width: 1367px) {
     @content;
   }
 }
