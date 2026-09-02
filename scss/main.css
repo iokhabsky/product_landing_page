@@ -215,9 +215,7 @@ body {
 }
 
 @media (max-width: 1023px) {
-  div.js-animate,
-  section.js-animate,
-  form.js-animate {
+  .js-animate {
     opacity: 1;
     transform: none;
     left: auto;

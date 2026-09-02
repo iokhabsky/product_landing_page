@@ -239,17 +239,13 @@ body {
     line-height: 1.875;
 }
 
-div,
-section,
-form {
-    &.js-animate {
-        @include tab-max() {
-            opacity: 1;
-            transform: none;
-            left: auto;
-            right: auto;
-            top: auto;
-            bottom: auto;
-        }
+.js-animate {
+    @include tab-max() {
+        opacity: 1;
+        transform: none;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
     }
 }
